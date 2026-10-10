@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kabeer Ahmed — Software Engineering Student, AI Automation & Prompt Engineer, Web Developer, and Founder of Kabeer Tech Hub.">
+  <title>Kabeer Ahmed — Software Engineer & AI Automation Architect</title>
+  
+  <!-- Favicon / Brand Symbol -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23D6B477'>✦</text></svg>">
+  
+  <!-- Google Fonts: Manrope (Headings), Inter (Body & UI), Space Grotesk (Accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="luxury-theme">
+
+  <!-- ============================================================
+       LAYER 1: CINEMATIC FIXED BACKGROUND VIDEO LAYER
+       ============================================================ -->
+  <div class="video-background-layer" aria-hidden="true">
+    <video id="bg-video" autoplay muted loop playsinline poster="assets/poster.png">
+      <source src="assets/portfolio.mp4" type="video/mp4">
+      <!-- Fallback message for unsupported browsers -->
+      Your browser does not support the video tag.
+    </video>
+    <!-- Dark Charcoal + Amber Color Grading Overlay -->
+    <div class="video-overlay"></div>
+    <!-- Soft Vignette & Subtle Warm Amber Ambient Gradient -->
+    <div class="video-vignette"></div>
+  </div>
+
+  <!-- Ambient Light Reflection Accents (Follows Scroll Subtly) -->
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-mid" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       LAYER 5: FIXED FLOATING NAVIGATION & SCROLL TRACKER
+       ============================================================ -->
+  <div class="scroll-progress-line" id="scroll-progress-line"></div>
+
+  <header class="nav-wrapper">
+    <nav class="floating-nav" id="main-nav" aria-label="Main Navigation">
+      <!-- Monogram / Brand -->
+      <a href="#hero" class="nav-brand">
+        <span class="brand-monogram">KA</span>
+        <div class="brand-text-block">
+          <span class="brand-name">KABEER AHMED</span>
+          <span class="brand-sub">KABEER TECH HUB</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#startup" class="nav-link">KTH</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#workflow" class="nav-link">Workflow</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- CTA Button -->
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-gold btn-sm">
+          <span>Let’s Work Together</span>
+          <svg class="icon-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       LAYER 4: SCROLLABLE TRANSLUCENT GLASS CONTENT PANELS
+       ============================================================ -->
+  <main id="main-content" class="content-stream">
+
+    <!-- ------------------------------------------------------------
+         1. HERO SECTION (Two-Column Cinematic Layout)
+         ------------------------------------------------------------ -->
+    <section id="hero" class="section hero-section">
+      <div class="container hero-grid">
+        
+        <!-- Left Column: Copy & Value Proposition -->
+        <div class="hero-left reveal-on-scroll">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span class="status-text">Available for AI & Automation Projects</span>
+          </div>
+
+          <div class="eyebrow-tag">
+            <span>SOFTWARE ENGINEERING</span>
+            <span class="sep">•</span>
+            <span>AI</span>
+            <span class="sep">•</span>
+            <span>AUTOMATION</span>
+          </div>
+
+          <h1 class="hero-heading">
+            I Build <span class="text-gold-gradient">Intelligent</span><br>
+            Digital Experiences<br>
+            That Create <span class="text-gold-gradient">Impact.</span>
+          </h1>
+
+          <p class="hero-description">
+            I’m <strong>Kabeer Ahmed</strong> — a Software Engineering student, AI Automation & Prompt Engineer, and Web Developer. I build AI-powered workflows, web applications, SaaS concepts, and creative digital experiences that transform ideas into practical systems.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#projects" class="btn btn-gold">
+              <span>Explore My Work</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-glass">
+              <span>Let’s Work Together</span>
+            </a>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="hero-meta-bar glass-panel-subtle">
+            <div class="meta-item">
+              <span class="meta-num">Iqra University</span>
+              <span class="meta-lbl">BS Software Engineering</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span class="meta-num">n8n & LangGraph</span>
+              <span class="meta-lbl">AI Agent Architecture</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span class="meta-num">Kabeer Tech Hub</span>
+              <span class="meta-lbl">Founder & Initiative</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Personal Portrait with Golden Halo -->
+        <div class="hero-right reveal-on-scroll delay-1">
+          <div class="portrait-stage">
+            <!-- Champagne Gold Halo Light Rings -->
+            <div class="halo-ring halo-ring-outer" aria-hidden="true"></div>
+            <div class="halo-ring halo-ring-inner" aria-hidden="true"></div>
+            <div class="halo-ambient-glow" aria-hidden="true"></div>
+
+            <!-- Glass Frame Enclosing the Authentic Portrait -->
+            <div class="portrait-glass-card">
+              <img src="assets/portrait.png" 
+                   alt="Kabeer Ahmed — Software Engineering Student & AI Automation Engineer" 
+                   class="portrait-img"
+                   loading="eager">
+              <div class="portrait-vignette"></div>
+            </div>
+
+            <!-- Floating Subtle Technical UI Nodes -->
+            <div class="tech-chip chip-1 glass-panel-chip">
+              <span class="chip-icon">🤖</span>
+              <span>AI Automation</span>
+            </div>
+            <div class="tech-chip chip-2 glass-panel-chip">
+              <span class="chip-icon">⚡</span>
+              <span>AI Agents</span>
+            </div>
+            <div class="tech-chip chip-3 glass-panel-chip">
+              <span class="chip-icon">🌐</span>
+              <span>Web Applications</span>
+            </div>
+            <div class="tech-chip chip-4 glass-panel-chip">
+              <span class="chip-icon">🔌</span>
+              <span>API Integrations</span>
+            </div>
+            <div class="tech-chip chip-5 glass-panel-chip">
+              <span class="chip-icon">🧠</span>
+              <span>Prompt Engineering</span>
+            </div>
+            <div class="tech-chip chip-6 glass-panel-chip">
+              <span class="chip-icon">🚀</span>
+              <span>SaaS Systems</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Down Hint Indicator -->
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+        <span class="scroll-txt">SCROLL TO DISCOVER</span>
+        <div class="mouse-pill">
+          <div class="mouse-wheel"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- ------------------------------------------------------------
+         2. ABOUT ME SECTION ("Beyond the Code.")
+         ------------------------------------------------------------ -->
+    <section id="about" class="section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">PHILOSOPHY & FOCUS</span>
+          <h2 class="section-title">Beyond the Code.</h2>
+          <p class="section-subtitle max-w-xl">
+            I’m a Software Engineering student with a strong interest in AI, automation, web development, and emerging technologies. I enjoy turning complex ideas into useful digital products, intelligent workflows, and practical solutions.
+          </p>
+        </div>
+
+        <div class="about-grid reveal-on-scroll">
+          
+          <!-- Pillar 1 -->
+          <div class="glass-panel pillar-card">
+            <div class="pillar-number">01</div>
+            <div class="pillar-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            </div>
+            <h3 class="pillar-title">Engineering Mindset</h3>
+            <p class="pillar-desc">
+              Problem-solving, structured thinking, and software fundamentals. Applying algorithms, modular architecture, and system reliability to build maintainable, scalable digital products.
+            </p>
+            <div class="pillar-meta">
+              <span>Software Principles</span> • <span>OOP & Clean Code</span>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="glass-panel pillar-card highlight-pillar">
+            <div class="pillar-number">02</div>
+            <div class="pillar-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <h3 class="pillar-title">AI & Automation</h3>
+            <p class="pillar-desc">
+              Intelligent workflows, prompt engineering, API integrations, and AI-assisted systems. Designing multi-step autonomous pipelines with n8n, LangGraph, and CrewAI that eliminate manual friction.
+            </p>
+            <div class="pillar-meta">
+              <span>Autonomous Agents</span> • <span>API Orchestration</span>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="glass-panel pillar-card">
+            <div class="pillar-number">03</div>
+            <div class="pillar-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3 class="pillar-title">Creative Technology</h3>
+            <p class="pillar-desc">
+              Web experiences, digital products, AI-generated content, and visual storytelling. Bridging technical implementation with refined aesthetics, typography, and human-centric design.
+            </p>
+            <div class="pillar-meta">
+              <span>Interactive UI</span> • <span>Digital Products</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Verified Credential Badge Strip -->
+        <div class="glass-panel-subtle about-certs-strip reveal-on-scroll">
+          <span class="certs-label">VERIFIED CREDENTIALS:</span>
+          <div class="certs-list">
+            <span class="cert-pill">✦ Google Cloud Prompt Design in Vertex AI</span>
+            <span class="cert-pill">✦ DeepLearning.AI “AI For Everyone”</span>
+            <span class="cert-pill">✦ MongoDB University Document Model (SQL to NoSQL)</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------
+         3. EDUCATION SECTION
+         ------------------------------------------------------------ -->
+    <section id="education" class="section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">ACADEMIC BACKGROUND</span>
+          <h2 class="section-title">Education.</h2>
+          <p class="section-subtitle">
+            Solid foundations in software engineering, mathematics, computer science, and visual design.
+          </p>
+        </div>
+
+        <div class="glass-panel timeline-container reveal-on-scroll">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <!-- Timeline Entry 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot-wrap">
+              <div class="timeline-dot current-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta-row">
+                <span class="timeline-period current-badge">AUGUST 2024 — PRESENT</span>
+                <span class="timeline-location">Karachi, Pakistan</span>
+              </div>
+              <h3 class="timeline-title">Bachelor of Science — Computer Software Engineering</h3>
+              <h4 class="timeline-institution">Iqra University (Official)</h4>
+              <p class="timeline-desc">
+                Pursuing rigorous software engineering degree focusing on software construction, algorithm design, data structures, object-oriented methodologies, relational & document databases, and scalable web engineering.
+              </p>
+              <div class="tag-row">
+                <span class="tag-pill">Software Architecture</span>
+                <span class="tag-pill">Data Structures</span>
+                <span class="tag-pill">Database Systems</span>
+                <span class="tag-pill">Algorithms</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Entry 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot-wrap">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta-row">
+                <span class="timeline-period">JULY 2022 — SEPTEMBER 2024</span>
+                <span class="timeline-location">Karachi, Pakistan</span>
+              </div>
+              <h3 class="timeline-title">Intermediate in Computer Science (ICS)</h3>
+              <h4 class="timeline-institution">Islamia Government Science College</h4>
+              <p class="timeline-desc">
+                Core studies in computational mathematics, programming logic, physics, and computer fundamentals providing the quantitative backbone for engineering.
+              </p>
+              <div class="tag-row">
+                <span class="tag-pill">Computer Science</span>
+                <span class="tag-pill">Mathematics</span>
+                <span class="tag-pill">Physics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Entry 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot-wrap">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta-row">
+                <span class="timeline-period">2020 — 2022</span>
+                <span class="timeline-location">Karachi, Pakistan</span>
+              </div>
+              <h3 class="timeline-title">Matriculation (Science)</h3>
+              <h4 class="timeline-institution">New Falcon School • Board of Secondary Education, Karachi</h4>
+              <p class="timeline-desc">
+                Secondary school education with core emphasis on mathematics, science, and analytical reasoning.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Entry 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot-wrap">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-meta-row">
+                <span class="timeline-period">FEBRUARY 2018 — OCTOBER 2020</span>
+                <span class="timeline-location">Karachi, Pakistan</span>
+              </div>
+              <h3 class="timeline-title">Diploma of Education — Graphic Design</h3>
+              <h4 class="timeline-institution">Power Print</h4>
+              <p class="timeline-desc">
+                Professional training in digital visual communication, document layout, typography, and creative design software (Photoshop, typography systems).
+              </p>
+              <div class="tag-row">
+                <span class="tag-pill">Graphic Design</span>
+                <span class="tag-pill">Branding</span>
+                <span class="tag-pill">Visual Layout</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------
+         4. EXPERIENCE SECTION ("Experience & Practical Work.")
+         ------------------------------------------------------------ -->
+    <section id="experience" class="section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">PRACTICAL WORK & TRACK RECORD</span>
+          <h2 class="section-title">Experience & Practical Work.</h2>
+          <p class="section-subtitle">
+            From client automation architectures to university software systems and entrepreneurial solutions.
+          </p>
+        </div>
+
+        <div class="experience-grid reveal-on-scroll">
+          
+          <!-- Experience Card 1: AI Automation & Prompt Engineer | Freelance -->
+          <div class="glass-panel exp-card highlight-card">
+            <div class="exp-badge">FREELANCE • ACTIVE</div>
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role">AI Automation & Prompt Engineer</h3>
+                <h4 class="exp-org">Freelance</h4>
+              </div>
+              <span class="exp-dates">2025 — Present</span>
+            </div>
+            <p class="exp-summary">
+              AI Automation Developer passionate about building intelligent workflows with n8n, AI agents, and API integrations. Focused on automating processes and creating scalable digital solutions.
+            </p>
+            <ul class="exp-points">
+              <li>Building intelligent autonomous workflows with n8n, AI agents, and custom API integrations.</li>
+              <li>Automating business processes, lead capture pipelines, and scalable digital solutions.</li>
+              <li>Implementing contextual prompt design and structured data pipelines for business efficiency.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag-pill">n8n</span>
+              <span class="tag-pill">AI Agents</span>
+              <span class="tag-pill">API Integrations</span>
+              <span class="tag-pill">Prompt Engineering</span>
+              <span class="tag-pill">Workflow Automation</span>
+            </div>
+          </div>
+
+          <!-- Experience Card 2: SARA BY AMNA -->
+          <div class="glass-panel exp-card">
+            <div class="exp-badge">E-COMMERCE & DIGITAL OPERATIONS</div>
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role">Social Media & Operations Coordinator</h3>
+                <h4 class="exp-org">SARA BY AMNA</h4>
+              </div>
+              <span class="exp-dates">2025</span>
+            </div>
+            <p class="exp-summary">
+              Managing brand presence, consumer engagement, and digital fulfillment operations across e-commerce channels.
+            </p>
+            <ul class="exp-points">
+              <li>Managing social media platforms, including content posting, customer interaction, and brand engagement.</li>
+              <li>Handling online orders and coordinating order processing through e-commerce tools and online platforms.</li>
+              <li>Tracking fulfillment metrics and ensuring high customer satisfaction standards.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag-pill">E-Commerce Platforms</span>
+              <span class="tag-pill">Social Media Management</span>
+              <span class="tag-pill">Order Processing</span>
+              <span class="tag-pill">Customer Interaction</span>
+            </div>
+          </div>
+
+          <!-- Experience Card 3: KABEER TECH HUB -->
+          <div class="glass-panel exp-card">
+            <div class="exp-badge">STARTUP INITIATIVE</div>
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-role">Documentation & Design Specialist</h3>
+                <h4 class="exp-org">Kabeer Tech Hub</h4>
+              </div>
+              <span class="exp-dates">2022 — 2025</span>
+            </div>
+            <p class="exp-summary">
+              Documentation & IT Specialist with 3+ years of experience in graphic design, document management, digital services, and customer support.
+            </p>
+            <ul class="exp-points">
+              <li>Created professional graphic design, branding collateral, posters, layouts, and typography systems.</li>
+              <li>Established structured document management, CV preparation, and digital typing workflows.</li>
+              <li>Provided comprehensive IT assistance, customer support, and digital service coordination.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag-pill">Technical Documentation</span>
+              <span class="tag-pill">Graphic Design</span>
+              <span class="tag-pill">Digital Services</span>
+              <span class="tag-pill">Customer Support</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------
+         5. SKILLS SECTION ("My Technical Toolkit.")
+         ------------------------------------------------------------ -->
+    <section id="skills" class="section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">COMPETENCIES</span>
+          <h2 class="section-title">My Technical Toolkit.</h2>
+          <p class="section-subtitle">
+            Structured into six core domains of engineering, automation, and creative technology.
+          </p>
+        </div>
+
+        <div class="skills-grid reveal-on-scroll">
+          
+          <!-- Category 1: AI & Automation -->
+          <div class="glass-panel skill-group-card">
+            <div class="skill-group-header">
+              <span class="skill-icon">⚡</span>
+              <h3>AI & Automation</h3>
+            </div>
+            <p class="skill-group-desc">Intelligent workflow orchestration, multi-agent pipelines, and asynchronous triggers.</p>
+            <div class="skill-pills">
+              <span class="skill-pill">n8n Orchestration</span>
+              <span class="skill-pill">LangGraph</span>
+              <span class="skill-pill">CrewAI</span>
+              <span class="skill-pill">Autonomous AI Agents</span>
+              <span class="skill-pill">Custom Webhooks</span>
+              <span class="skill-pill">Zapier</span>
+              <span class="skill-pill">API Integrations</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Software Engineering -->
+          <div class="glass-panel skill-group-card">
+            <div class="skill-group-header">
+              <span class="skill-icon">💻</span>
+              <h3>Software Engineering</h3>
+            </div>
+            <p class="skill-group-desc">Structured programming, algorithms, architectural patterns, and clean code.</p>
+            <div class="skill-pills">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">JavaScript (ES6+)</span>
+              <span class="skill-pill">Object-Oriented (OOP)</span>
+              <span class="skill-pill">Data Structures</span>
+              <span class="skill-pill">Algorithm Design</span>
+              <span class="skill-pill">Git / GitHub</span>
+              <span class="skill-pill">RESTful Architecture</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Web Development -->
+          <div class="glass-panel skill-group-card">
+            <div class="skill-group-header">
+              <span class="skill-icon">🌐</span>
+              <h3>Web Development</h3>
+            </div>
+            <p class="skill-group-desc">Modern responsive applications, component architectures, and performant styling.</p>
+            <div class="skill-pills">
+              <span class="skill-pill">React 18</span>
+              <span class="skill-pill">HTML5 Semantic</span>
+              <span class="skill-pill">CSS3 & Glassmorphism</span>
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">Express.js</span>
+              <span class="skill-pill">Vite</span>
+              <span class="skill-pill">Responsive Design</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Prompt Engineering -->
+          <div class="glass-panel skill-group-card">
+            <div class="skill-group-header">
+              <span class="skill-icon">🎯</span>
+              <h3>Prompt Engineering</h3>
+            </div>
+            <p class="skill-group-desc">Context modeling, system instruction design, structured JSON outputs, and evaluation.</p>
+            <div class="skill-pills">
+              <span class="skill-pill">Google Vertex AI</span>
+              <span class="skill-pill">Claude</span>
+              <span class="skill-pill">ChatGPT</span>
+              <span class="skill-pill">Context Window Design</span>
+              <span class="skill-pill">Structured Output JSON</span>
+              <span class="skill-pill">Few-Shot Prompting</span>
+              <span class="skill-pill">Prompt Testing</span>
+            </div>
+          </div>
+
+          <!-- Category 5: Creative AI & Visuals -->
+          <div class="glass-panel skill-group-card">
+            <div class="skill-group-header">
+              <span class="skill-icon">🎨</span>
+              <h3>Creative AI & Design</h3>
+            </div>
+            <p class="skill-group-desc">Generative visual production, product concepts, visual assets, and UI layout.</p>
+            <div class="skill-pills">
+              <span class="skill-pill">AI Visual Generation</span>
+              <span class="skill-pill">Figma UI/UX</span>
+              <span class="skill-pill">Adobe Photoshop</span>
+              <span class="skill-pill">Video Production Flow</span>
+              <span class="skill-pill">Brand Identity</span>
+              <span class="skill-pill">Visual Storytelling</span>
+            </div>
+          </div>
+
+          <!-- Category 6: Business Systems & DB -->
+          <div class="glass-panel skill-group-card">
+            <div class="skill-group-header">
+              <span class="skill-icon">🗄️</span>
+              <h3>Business Systems & DB</h3>
+            </div>
+            <p class="skill-group-desc">Data synchronization, document databases, CRM workflows, and notification pipelines.</p>
+            <div class="skill-pills">
+              <span class="skill-pill">Supabase</span>
+              <span class="skill-pill">Firebase Auth & Store</span>
+              <span class="skill-pill">MongoDB (NoSQL)</span>
+              <span class="skill-pill">SQL Relational</span>
+              <span class="skill-pill">CRM Automations</span>
+              <span class="skill-pill">Auto-Mailers (OAuth)</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------
+         6. KABEER TECH HUB — SUBTLE STARTUP INTEGRATION
+         ------------------------------------------------------------ -->
+    <section id="startup" class="section">
+      <div class="container">
+        
+        <div class="glass-panel startup-showcase-panel reveal-on-scroll">
+          
+          <div class="startup-grid">
+            
+            <!-- Left Info -->
+            <div class="startup-info">
+              <span class="startup-eyebrow">MY INITIATIVE</span>
+              <h2 class="startup-heading">Kabeer Tech Hub</h2>
+              <h3 class="startup-subheading text-gold-gradient">All In One Solution Hub</h3>
+              
+              <p class="startup-desc">
+                <strong>Kabeer Tech Hub</strong> is my technology and digital solutions initiative, focused on exploring AI-powered workflows, web applications, SaaS concepts, and creative digital solutions for businesses and creators.
+              </p>
+              
+              <p class="startup-quote">
+                “Built around one idea: making technology practical, useful, and accessible.”
+              </p>
+
+              <div class="startup-meta-tags">
+                <span class="tag-pill">AI</span>
+                <span class="tag-pill">AUTOMATION</span>
+                <span class="tag-pill">WEB</span>
+                <span class="tag-pill">DIGITAL SOLUTIONS</span>
+              </div>
+
+              <div class="startup-action">
+                <a href="#contact" class="btn btn-gold">
+                  <span>Explore Kabeer Tech Hub</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Visual & Connected Services -->
+            <div class="startup-visual-wrap">
+              <div class="startup-logo-container">
+                <img src="assets/kabeer_tech_hub.png" 
+                     alt="Kabeer Tech Hub — All In One Solution Hub" 
+                     class="startup-brand-img"
+                     loading="lazy">
+              </div>
+
+              <!-- 4 Connected Service Categories with glowing nodes -->
+              <div class="connected-services-map">
+                <div class="service-node node-1">
+                  <div class="node-glow"></div>
+                  <span class="node-title">AI & Automation</span>
+                </div>
+                <div class="service-node node-2">
+                  <div class="node-glow"></div>
+                  <span class="node-title">Web Development</span>
+                </div>
+                <div class="service-node node-3">
+                  <div class="node-glow"></div>
+                  <span class="node-title">Digital Products</span>
+                </div>
+                <div class="service-node node-4">
+                  <div class="node-glow"></div>
+                  <span class="node-title">Creative AI</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------
+         7. FEATURED CASE STUDY: FIXHUB (Full Breakdown)
+         ------------------------------------------------------------ -->
+    <section id="case-study" class="section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">VERIFIED SHOWCASE</span>
+          <h2 class="section-title">Featured Case Study: FixHub</h2>
+          <p class="section-subtitle">
+            Pakistan's first AI-driven service provider matching platform with real-time location awareness.
+          </p>
+        </div>
+
+        <div class="glass-panel case-study-panel reveal-on-scroll">
+          
+          <div class="case-study-grid">
+            
+            <!-- Left: Interactive Video Showcase -->
+            <div class="case-video-box">
+              <div class="video-container-glass">
+                <video id="fixhub-video" 
+                       class="demo-video-player" 
+                       controls 
+                       playsinline 
+                       poster="assets/poster.png">
+                  <source src="assets/fixhub_demo.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
+                </video>
+                <div class="video-label-badge">
+                  <span>LIVE DEMO CAPTURE</span>
+                </div>
+              </div>
+              <div class="case-video-caption">
+                <span>Walkthrough of Gemini Urdu/English diagnosis & map matching in FixHub</span>
+              </div>
+            </div>
+
+            <!-- Right: Project Deep-Dive -->
+            <div class="case-details">
+              <div class="case-tag-row">
+                <span class="badge-mini">AI-POWERED PLATFORM</span>
+                <span class="badge-mini badge-gold">WORKING PROTOTYPE</span>
+              </div>
+
+              <h3 class="case-heading">FixHub — Smart Home Services</h3>
+              <p class="case-overview">
+                An AI-orchestrated home repair platform solving service discovery and urgency triage across Pakistani urban centers (Karachi, Lahore, Islamabad).
+              </p>
+
+              <div class="case-block">
+                <h4 class="case-subheading">The Problem Addressed</h4>
+                <p>
+                  Finding trustworthy, nearby technicians for plumbing, electrical, and appliance repairs is chaotic. Users struggle to describe technical issues accurately and lack real-time proximity transparency.
+                </p>
+              </div>
+
+              <div class="case-block">
+                <h4 class="case-subheading">What I Built</h4>
+                <p>
+                  Integrated <strong>Google Gemini</strong> to allow voice and text problem reporting in English and Urdu. The AI diagnoses the fault, estimates urgency and budget, and coordinates with <strong>MapTiler GL JS & Google Maps</strong> to display verified nearby technicians, real-time messaging, and booking receipts.
+                </p>
+              </div>
+
+              <div class="case-tech-stack">
+                <span class="stack-tag">React 18 + Vite</span>
+                <span class="stack-tag">Node.js + Express</span>
+                <span class="stack-tag">Gemini</span>
+                <span class="stack-tag">MapTiler GL</span>
+                <span class="stack-tag">Google Maps API</span>
+                <span class="stack-tag">Firebase</span>
+              </div>
+
+              <div class="case-outcome-box">
+                <strong>Key Learning:</strong> Multimodal prompt design paired with geospatial coordinates transforms raw LLM intelligence into an immediate real-world utility.
+              </div>
+
+              <div class="case-cta-action" style="margin-top: 22px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+                <a href="https://fixhub12.netlify.app" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-sm">
+                  <span>Launch Live Prototype</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                </a>
+                <span class="badge-mini badge-gold">✦ Prototype / Idea</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------
+         8. PROJECT PORTFOLIO ("Selected Projects.")
+         ------------------------------------------------------------ -->
+    <section id="projects" class="section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">PORTFOLIO</span>
+          <h2 class="section-title">Selected Projects.</h2>
+          <p class="section-subtitle">
+            Experiments, systems, and digital experiences built around practical ideas.
+          </p>
+
+          <!-- Category Filter Tabs -->
+          <div class="project-filter-row">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="ai-automation">AI & Automation</button>
+            <button class="filter-btn" data-filter="web-apps">Web Applications</button>
+            <button class="filter-btn" data-filter="creative-systems">Creative Systems</button>
+          </div>
+        </div>
+
+        <div class="projects-grid reveal-on-scroll" id="projects-grid">
+          
+          <!-- Project 1: FixHub -->
+          <div class="glass-panel project-card" data-category="web-apps ai-automation">
+            <div class="project-media">
+              <img src="assets/fixhub_thumb.jpg" alt="FixHub — AI Service Matcher" class="project-thumb-img" loading="lazy">
+              <video class="card-hover-video" muted loop playsinline preload="none">
+                <source src="assets/fixhub_demo.mp4" type="video/mp4">
+              </video>
+              <div class="hover-play-cue">
+                <span class="play-cue-dot"></span>
+                <span>HOVER TO PLAY</span>
+              </div>
+              <div class="project-category-tag"><span class="badge-prototype-pill">PROTOTYPE</span> AI & WEB APP</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">FixHub — AI Service Matcher</h3>
+              <p class="project-desc">
+                AI-driven home service matching with Urdu/English voice input, Gemini diagnosis, interactive map tracking, and appointment scheduling.
+              </p>
+              <div class="project-stack">
+                <span>React</span> • <span>Gemini</span> • <span>MapTiler</span> • <span>Google Hackathon 2026</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://fixhub12.netlify.app" target="_blank" rel="noopener noreferrer" class="btn-visit-site">
+                  <span>View Project ↗</span>
+                </a>
+                <button class="project-link open-video-modal" data-video="assets/fixhub_demo.mp4" data-title="FixHub Platform Walkthrough">
+                  <span>Walkthrough</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Trade Hub -->
+          <div class="glass-panel project-card" data-category="web-apps creative-systems">
+            <div class="project-media">
+              <img src="assets/tradehub_thumb.jpg" alt="Trade Hub — All In One Solution Hub" class="project-thumb-img" loading="lazy">
+              <video class="card-hover-video" muted loop playsinline preload="none">
+                <source src="assets/tradehub_demo.mp4" type="video/mp4">
+              </video>
+              <div class="hover-play-cue">
+                <span class="play-cue-dot"></span>
+                <span>HOVER TO PLAY</span>
+              </div>
+              <div class="project-category-tag"><span class="badge-prototype-pill">PROTOTYPE</span> GLOBAL B2B TRADE</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Trade Hub — Global B2B Export Hub</h3>
+              <p class="project-desc">
+                Connecting small manufacturers from factory floor to foreign port with verified export experts, category inspections, document clearance, and hassle-free IEC registration.
+              </p>
+              <div class="project-stack">
+                <span>B2B Platform</span> • <span>Global Trade</span> • <span>MeDo App</span> • <span>Export Engine</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://app-c7wolf4tvmdd.appmedo.com" target="_blank" rel="noopener noreferrer" class="btn-visit-site">
+                  <span>View Project ↗</span>
+                </a>
+                <button class="project-link open-video-modal" data-video="assets/tradehub_demo.mp4" data-title="Trade Hub Platform Demo">
+                  <span>Walkthrough</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: FocusBuddy -->
+          <div class="glass-panel project-card" data-category="ai-automation creative-systems web-apps">
+            <div class="project-media">
+              <img src="assets/focusbuddy_thumb.png" alt="FocusBuddy — AI Behavioral Intervention System" class="project-thumb-img" loading="lazy">
+              <div class="hover-play-cue">
+                <span class="play-cue-dot"></span>
+                <span>PROTOTYPE PREVIEW</span>
+              </div>
+              <div class="project-category-tag"><span class="badge-prototype-pill">PROTOTYPE</span> BEHAVIORAL AI</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">FocusBuddy — Behavioral Intervention System</h3>
+              <p class="project-desc">
+                AI-powered behavioral intervention system engineered to beat procrastination before it steals time. Features predictive habit risk analysis, personalized nudges, and smart task interventions.
+              </p>
+              <div class="project-stack">
+                <span>Behavioral AI</span> • <span>Predictive Nudges</span> • <span>Smart Reminders</span> • <span>MeDo</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://medo.dev/projects/app-boe2cviqq8ld/preview" target="_blank" rel="noopener noreferrer" class="btn-visit-site">
+                  <span>View Project ↗</span>
+                </a>
+                <button class="project-link open-video-modal" data-video="assets/focusbuddy_thumb.png" data-title="FocusBuddy Architecture & UI Walkthrough">
+                  <span>Walkthrough</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Social Media Content Workflow -->
+          <div class="glass-panel project-card" data-category="ai-automation creative-systems">
+            <div class="project-media">
+              <img src="assets/socialmedia_thumb.png" alt="Social Media Content Workflow" class="project-thumb-img" loading="lazy">
+              <div class="hover-play-cue">
+                <span class="play-cue-dot"></span>
+                <span>WORKFLOW GRAPH</span>
+              </div>
+              <div class="project-category-tag">AUTONOMOUS WORKFLOW</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Social Media Content Workflow</h3>
+              <p class="project-desc">
+                Agentic system combining n8n, Claude, and LangGraph to research industry trends, generate structured editorial drafts, and schedule automated multi-platform publication.
+              </p>
+              <div class="project-stack">
+                <span>n8n</span> • <span>LangGraph</span> • <span>Claude</span> • <span>Webhooks</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link open-video-modal" data-video="assets/socialmedia_thumb.png" data-title="Social Media Content Workflow Diagram">
+                  <span>Walkthrough</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+                <span class="status-verified">✦ Verified Client Workflow</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: WhatsApp Automation -->
+          <div class="glass-panel project-card" data-category="ai-automation">
+            <div class="project-media">
+              <img src="assets/whatsapp_thumb.png" alt="WhatsApp Automation System" class="project-thumb-img" loading="lazy">
+              <div class="hover-play-cue">
+                <span class="play-cue-dot"></span>
+                <span>WORKFLOW GRAPH</span>
+              </div>
+              <div class="project-category-tag">CONVERSATIONAL AI</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">WhatsApp Automation — AI Support Agent</h3>
+              <p class="project-desc">
+                Customer query triage and support agent utilizing prompt-engineered context memory, intent classification, and instant ticket escalation over WhatsApp API.
+              </p>
+              <div class="project-stack">
+                <span>WhatsApp API</span> • <span>Prompt Design</span> • <span>n8n</span> • <span>JSON</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link open-video-modal" data-video="assets/whatsapp_thumb.png" data-title="WhatsApp Automation Workflow Architecture">
+                  <span>Walkthrough</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+                <span class="status-verified">✦ 24/7 Automated Triage</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Data Fetch Sales Pipeline -->
+          <div class="glass-panel project-card" data-category="ai-automation">
+            <div class="project-media">
+              <img src="assets/salespipeline_thumb.png" alt="Data Fetch Sales Pipeline" class="project-thumb-img" loading="lazy">
+              <div class="hover-play-cue">
+                <span class="play-cue-dot"></span>
+                <span>WORKFLOW GRAPH</span>
+              </div>
+              <div class="project-category-tag">DATA INTEGRATION</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Data Fetch Sales Pipeline</h3>
+              <p class="project-desc">
+                Event-driven synchronization engine connecting multi-channel data scrapers, CRM databases, automated data scrubbing, and lead qualification pipelines.
+              </p>
+              <div class="project-stack">
+                <span>Data Fetch</span> • <span>n8n Flow</span> • <span>CRM API</span> • <span>Webhooks</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link open-video-modal" data-video="assets/salespipeline_thumb.png" data-title="Data Fetch Sales Pipeline Architecture">
+                  <span>Walkthrough</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+                <span class="status-verified">✦ Automated Pipeline</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7: Email Automation -->
+          <div class="glass-panel project-card" data-category="ai-automation">
+            <div class="project-media">
+              <img src="assets/gmail_thumb.png" alt="Email Automation Workflow" class="project-thumb-img" loading="lazy">
+              <div class="hover-play-cue">
+                <span class="play-cue-dot"></span>
+                <span>WORKFLOW GRAPH</span>
+              </div>
+              <div class="project-category-tag">BUSINESS WORKFLOW</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Email Automation & Lead Dispatch</h3>
+              <p class="project-desc">
+                Inbound email triage and qualification engine triggering personalized AI response drafts, Gmail API synchronization, and automated CRM tracking.
+              </p>
+              <div class="project-stack">
+                <span>OAuth2</span> • <span>Gmail API</span> • <span>n8n Automation</span> • <span>Data Scrubbing</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link open-video-modal" data-video="assets/gmail_thumb.png" data-title="Gmail Automation Pipeline Diagram">
+                  <span>Walkthrough</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+                <span class="status-verified">✦ Operational Pipeline</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------
+         9. HOW I BUILD SYSTEMS (Workflow)
+         ------------------------------------------------------------ -->
+    <section id="workflow" class="section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">ENGINEERING METHODOLOGY</span>
+          <h2 class="section-title">From Ideas to Intelligent Systems.</h2>
+          <p class="section-subtitle max-w-xl">
+            “I focus on understanding the problem first, designing a practical solution, building the system, and refining it through testing.”
+          </p>
+        </div>
+
+        <div class="glass-panel workflow-panel reveal-on-scroll">
+          <!-- Flow Line with Traveling Light -->
+          <div class="workflow-line" id="workflow-line" aria-hidden="true">
+            <div class="traveling-light"></div>
+          </div>
+
+          <div class="workflow-steps-container">
+            
+            <div class="wf-step">
+              <div class="wf-node">01</div>
+              <h4 class="wf-title">IDEA</h4>
+              <p class="wf-desc">Problem framing & user needs</p>
+            </div>
+
+            <div class="wf-step">
+              <div class="wf-node">02</div>
+              <h4 class="wf-title">PLAN</h4>
+              <p class="wf-desc">Architecture & data flow</p>
+            </div>
+
+            <div class="wf-step">
+              <div class="wf-node">03</div>
+              <h4 class="wf-title">DESIGN</h4>
+              <p class="wf-desc">UI/UX & prompt templates</p>
+            </div>
+
+            <div class="wf-step">
+              <div class="wf-node active-node">04</div>
+              <h4 class="wf-title text-gold-gradient">BUILD</h4>
+              <p class="wf-desc">Full-stack & agent code</p>
+            </div>
+
+            <div class="wf-step">
+              <div class="wf-node">05</div>
+              <h4 class="wf-title">INTEGRATE</h4>
+              <p class="wf-desc">APIs & webhooks linking</p>
+            </div>
+
+            <div class="wf-step">
+              <div class="wf-node">06</div>
+              <h4 class="wf-title">TEST</h4>
+              <p class="wf-desc">Edge cases & accuracy</p>
+            </div>
+
+            <div class="wf-step">
+              <div class="wf-node">07</div>
+              <h4 class="wf-title">RESULT</h4>
+              <p class="wf-desc">Reliable impact delivered</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------
+         10. TECHNOLOGY ECOSYSTEM
+         ------------------------------------------------------------ -->
+    <section id="ecosystem" class="section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="section-tag">TECH STACK</span>
+          <h2 class="section-title">Tools I Explore & Build With.</h2>
+          <p class="section-subtitle">
+            An intentionally chosen ecosystem of modern languages, platforms, and agent frameworks.
+          </p>
+        </div>
+
+        <div class="glass-panel-subtle ecosystem-grid reveal-on-scroll">
+          
+          <div class="tool-card">
+            <span class="tool-dot">✦</span>
+            <span class="tool-name">Claude</span>
+            <span class="tool-category">Anthropic</span>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-dot">✦</span>
+            <span class="tool-name">Gemini</span>
+            <span class="tool-category">Google</span>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-dot">✦</span>
+            <span class="tool-name">ChatGPT</span>
+            <span class="tool-category">OpenAI</span>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-dot">✦</span>
+            <span class="tool-name">n8n</span>
+            <span class="tool-category">Automation Hub</span>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-dot">✦</span>
+            <span class="tool-name">LangGraph</span>
+            <span class="tool-category">Agent Cycles</span>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-dot">✦</span>
+            <span class="tool-name">CrewAI</span>
+            <span class="tool-category">Multi-Agent</span>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-dot">✦</span>
+            <span class="tool-name">Python</span>
+            <span class="tool-category">AI & Backend</span>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-dot">✦</span>
+            <span class="tool-name">JavaScript</span>
+            <span class="tool-category">ES6+ Full-Stack</span>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-dot">✦</span>
+            <span class="tool-name">React 18</span>
+            <span class="tool-category">Modern UI</span>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-dot">✦</span>
+            <span class="tool-name">Node.js</span>
+            <span class="tool-category">Express Runtime</span>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-dot">✦</span>
+            <span class="tool-name">Supabase</span>
+            <span class="tool-category">Postgres & Sync</span>
+          </div>
+
+          <div class="tool-card">
+            <span class="tool-dot">✦</span>
+            <span class="tool-name">MongoDB</span>
+            <span class="tool-category">Document DB</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------
+         11. PREMIUM CONTACT SECTION
+         ------------------------------------------------------------ -->
+    <section id="contact" class="section">
+      <div class="container">
+        
+        <div class="contact-wrapper reveal-on-scroll">
+          
+          <div class="contact-header text-center">
+            <span class="section-tag">START A CONVERSATION</span>
+            <h2 class="contact-headline">
+              Have an Idea?<br>
+              Let’s Turn It Into <span class="text-gold-gradient">Something Useful.</span>
+            </h2>
+            <p class="contact-subtext">
+              From intelligent workflows to web applications and creative digital solutions, I'm interested in building practical systems that solve real problems.
+            </p>
+
+            <div class="direct-channels">
+              <a href="https://wa.me/923126098241" target="_blank" rel="noopener noreferrer" class="channel-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <span>WhatsApp: +92 3126098241</span>
+              </a>
+              <a href="mailto:kb57goodplayer@gmail.com" class="channel-pill">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>kb57goodplayer@gmail.com</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Glass Form Panel -->
+          <div class="glass-panel contact-card">
+            
+            <form id="portfolio-contact-form" name="START A CONVERSATION" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" novalidate>
+              <!-- Netlify Forms Hidden Detection Fields -->
+              <input type="hidden" name="form-name" value="START A CONVERSATION" />
+              <p style="display:none;" aria-hidden="true">
+                <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+              </p>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Your Name <span class="req">*</span></label>
+                  <input type="text" id="contact-name" name="name" class="glass-input" placeholder="e.g. Alex Morgan" required>
+                  <span class="field-error" id="error-name"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Email Address <span class="req">*</span></label>
+                  <input type="email" id="contact-email" name="email" class="glass-input" placeholder="e.g. alex@company.com" required>
+                  <span class="field-error" id="error-email"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-project-type" class="form-label">Project Type <span class="req">*</span></label>
+                <select id="contact-project-type" name="project_type" class="glass-input glass-select" required>
+                  <option value="" disabled selected>Select what you'd like to build...</option>
+                  <option value="AI Automation">AI Automation (n8n, Agents, Webhooks)</option>
+                  <option value="Web Development">Web Development (Full-Stack, React, UI)</option>
+                  <option value="AI Content">AI Content & Prompt Systems</option>
+                  <option value="SaaS / Digital Product">SaaS / Digital Product Concept</option>
+                  <option value="Other">Other Custom Inquiries</option>
+                </select>
+                <span class="field-error" id="error-type"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Project Details or Goal <span class="req">*</span></label>
+                <textarea id="contact-message" name="message" rows="5" class="glass-input glass-textarea" placeholder="Tell me about your idea, current challenges, or what you want automated..." required></textarea>
+                <span class="field-error" id="error-message"></span>
+              </div>
+
+              <div class="form-submit-row">
+                <button type="submit" class="btn btn-gold btn-block" id="submit-btn">
+                  <span>Let’s Build Something Intelligent</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+
+              <!-- Form State Alerts -->
+              <div id="form-alert" class="form-alert" style="display:none;" role="alert"></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       LAYER 4 (CONT.): MINIMAL LUXURY FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      
+      <!-- Top Brand Row -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-monogram">KTH</div>
+          <div>
+            <h4 class="footer-brand-title">KABEER TECH HUB</h4>
+            <p class="footer-brand-tagline">AI • AUTOMATION • WEB • DIGITAL SOLUTIONS</p>
+          </div>
+        </div>
+        
+        <div class="footer-founder-info">
+          <span class="founder-name">Kabeer Ahmed</span>
+          <span class="founder-title">Software Engineering Student • AI Automation Architect</span>
+          <span class="founder-location">Karachi, Sindh, Pakistan</span>
+        </div>
+      </div>
+
+      <!-- Footer Divider -->
+      <div class="footer-line"></div>
+
+      <!-- Bottom Links & Rights -->
+      <div class="footer-bottom">
+        <p class="copyright">
+          © 2026 Kabeer Ahmed. All rights reserved. Built with cinematic glassmorphism & continuous video continuity.
+        </p>
+
+        <div class="footer-social-links">
+          <a href="https://www.linkedin.com/in/kabeer-ahmed-275b7b20b" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+          <a href="https://wa.me/923126098241" target="_blank" rel="noopener noreferrer" class="social-link">WhatsApp</a>
+          <a href="https://www.fiverr.com/s/xrrwRwa" target="_blank" rel="noopener noreferrer" class="social-link">Fiverr</a>
+          <a href="mailto:kb57goodplayer@gmail.com" class="social-link">Email</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       INTERACTIVE VIDEO MODAL FOR FULL PROJECT WALKTHROUGHS
+       ============================================================ -->
+  <div class="video-modal-backdrop" id="video-modal" aria-hidden="true">
+    <div class="video-modal-dialog glass-panel">
+      <div class="video-modal-header">
+        <h3 id="modal-title" class="modal-title">Project Video Walkthrough</h3>
+        <button class="modal-close-btn" id="modal-close" aria-label="Close walkthrough">&times;</button>
+      </div>
+      <div class="video-modal-body">
+        <video id="modal-video-player" controls playsinline>
+          <source src="" type="video/mp4">
+        </video>
+        <img id="modal-image-viewer" style="display:none; width:100%; height:auto; max-height:75vh; object-fit:contain; border-radius:12px; border:1px solid rgba(214,180,119,0.3);" alt="Walkthrough Architecture">
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

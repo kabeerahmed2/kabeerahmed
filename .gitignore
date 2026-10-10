@@ -1,0 +1,14 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependency & Cache Directories
+node_modules/
+.npm/
+
+# Environment & Temp Files
+.env
+.env.local
+*.log
+*.tmp
