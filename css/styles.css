@@ -225,12 +225,14 @@ img, video {
   gap: 12px;
 }
 
-.brand-monogram {
+.brand-monogram,
+.brand-logo-img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
   background: linear-gradient(135deg, rgba(214, 180, 119, 0.25), rgba(214, 180, 119, 0.05));
   border: 1px solid var(--gold-champagne);
   border-radius: 10px;
@@ -239,7 +241,14 @@ img, video {
   font-weight: 700;
   color: var(--gold-champagne);
   letter-spacing: 0.05em;
-  box-shadow: 0 0 15px rgba(214, 180, 119, 0.25);
+  box-shadow: 0 0 16px rgba(214, 180, 119, 0.35);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.nav-brand:hover .brand-logo-img,
+.nav-brand:hover .brand-monogram {
+  transform: scale(1.08);
+  box-shadow: 0 0 22px rgba(214, 180, 119, 0.6);
 }
 
 .brand-text-block {
