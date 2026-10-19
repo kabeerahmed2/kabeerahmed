@@ -42,7 +42,7 @@ A luxury, cinematic personal portfolio website for **Kabeer Ahmed** (Software En
    - **Trade Hub** (https://app-c7wolf4tvmdd.appmedo.com)
    - **FocusBuddy** (https://medo.dev/projects/app-boe2cviqq8ld/preview)
    - **Social Media Content Workflow** (n8n + Claude + LangGraph)
-   - **WhatsApp Automation — AI Support Agent**
+   - **WhatsApp Automation — AI Support Agent** (Interactive video walkthrough & hover preview)
    - **Data Fetch Sales Pipeline & Lead Scoring**
    - **Email Automation & Smart Inbox Dispatch**
 10. **Engineering Workflow (01 to 07)**: Horizontal/vertical sequence (IDEA → PLAN → DESIGN → BUILD → INTEGRATE → TEST → RESULT) with traveling light beam animation.
