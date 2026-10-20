@@ -1352,5 +1352,34 @@
   </div>
 
   <script src="js/app.js"></script>
+
+  <!-- ============================================================
+       N8N AI CHATBOT WIDGET — KABEER TECH HUB
+       ============================================================ -->
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+      webhookUrl: 'https://kabeerai.tech/webhook/7b620939-ffb2-4f48-9ed8-d241da05081f/chat',
+      mode: 'window',
+      showWelcomeScreen: true,
+      loadPreviousSession: true,
+      initialMessages: [
+        'Hi there! 👋 Welcome to Kabeer Tech Hub',
+        'How can I help you with AI automation or custom workflows today?'
+      ],
+      i18n: {
+        en: {
+          title: 'Kabeer Tech Hub AI',
+          subtitle: 'AI Automation & Systems Consultant',
+          footer: 'Powered by Kabeer Tech Hub • n8n',
+          getStarted: 'Start Conversation',
+          inputPlaceholder: 'Ask about AI automation, agents, or systems...',
+          closeButtonTooltip: 'Close Chat'
+        }
+      }
+    });
+  </script>
 </body>
 </html>
