@@ -22,7 +22,7 @@
   <!-- Google Fonts: Manrope (Headings), Inter (Body & UI), Space Grotesk (Accents) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -1354,32 +1354,350 @@
   <script src="js/app.js"></script>
 
   <!-- ============================================================
-       N8N AI CHATBOT WIDGET — KABEER TECH HUB
+       KABEER AI ASSISTANT — BESPOKE LUXURY CHATBOT INTERFACE
+       Matching Provided Design Architecture & n8n Live Webhook
        ============================================================ -->
-  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-  <script type="module">
-    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+  <!-- Floating Launch Trigger Bubble -->
+  <button id="kth-chat-trigger" class="kth-chat-trigger" aria-label="Open Kabeer AI Assistant">
+    <div class="kth-trigger-icon-wrap">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="8" width="16" height="12" rx="4"></rect>
+        <circle cx="9" cy="14" r="1.5" fill="currentColor"></circle>
+        <circle cx="15" cy="14" r="1.5" fill="currentColor"></circle>
+        <path d="M12 4v4"></path>
+        <circle cx="12" cy="2.5" r="1.5" fill="currentColor"></circle>
+      </svg>
+      <span class="kth-trigger-status-beacon" aria-hidden="true"></span>
+    </div>
+    <span class="kth-trigger-pill-badge">
+      <span class="kth-badge-dot"></span>
+      <span>Ask Kabeer AI</span>
+    </span>
+  </button>
 
-    createChat({
-      webhookUrl: 'https://kabeerai.tech/webhook/7b620939-ffb2-4f48-9ed8-d241da05081f/chat',
-      mode: 'window',
-      showWelcomeScreen: true,
-      loadPreviousSession: true,
-      initialMessages: [
-        'Hi there! 👋 Welcome to Kabeer Tech Hub',
-        'How can I help you with AI automation or custom workflows today?'
-      ],
-      i18n: {
-        en: {
-          title: 'Kabeer Tech Hub AI',
-          subtitle: 'AI Automation & Systems Consultant',
-          footer: 'Powered by Kabeer Tech Hub • n8n',
-          getStarted: 'Start Conversation',
-          inputPlaceholder: 'Ask about AI automation, agents, or systems...',
-          closeButtonTooltip: 'Close Chat'
-        }
-      }
-    });
-  </script>
+  <!-- Fullscreen / Floating Glassmorphic Chat Modal -->
+  <div id="kth-chat-modal" class="kth-chat-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="kth-chat-backdrop" id="kth-chat-backdrop"></div>
+    
+    <div class="kth-chat-window" id="kth-chat-window">
+      <!-- Ambient Golden Light Flares -->
+      <div class="kth-ambient-flare kth-flare-topright"></div>
+      <div class="kth-ambient-flare kth-flare-bottomleft"></div>
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="kth-chat-sidebar">
+        <div class="kth-sidebar-top">
+          <!-- Brand Logo & Title -->
+          <div class="kth-brand-header">
+            <div class="kth-logo-square">
+              <span class="kth-ka-text">KA</span>
+            </div>
+            <div class="kth-brand-titles">
+              <h2 class="kth-brand-name">Kabeer Tech Hub</h2>
+              <span class="kth-brand-tagline">ALL IN ONE SOLUTION HUB</span>
+            </div>
+          </div>
+
+          <!-- Navigation Links -->
+          <nav class="kth-sidebar-nav" aria-label="Assistant Navigation">
+            <button type="button" class="kth-nav-btn kth-active" id="kth-nav-new-chat">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <span>New Chat</span>
+            </button>
+            <button type="button" class="kth-nav-btn" id="kth-nav-projects">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Projects</span>
+            </button>
+            <button type="button" class="kth-nav-btn" id="kth-nav-tools">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <span>Tools</span>
+            </button>
+            <button type="button" class="kth-nav-btn" id="kth-nav-settings">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+              <span>Settings</span>
+            </button>
+          </nav>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="kth-sidebar-bottom">
+          <!-- Cursive Quote -->
+          <div class="kth-cursive-quote">
+            <span>Your Ideas</span><br>
+            <span>Our Technology</span><br>
+            <span>Better Tomorrow</span>
+          </div>
+
+          <!-- Online Status Pill -->
+          <div class="kth-sidebar-status-pill">
+            <div class="kth-status-beacon-wrap">
+              <span class="kth-status-beacon-dot"></span>
+            </div>
+            <div class="kth-status-texts">
+              <span class="kth-status-online">Online</span>
+              <span class="kth-status-sub">Always here to help</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT MAIN AREA -->
+      <main class="kth-chat-main">
+        <!-- Topbar -->
+        <header class="kth-main-topbar">
+          <div class="kth-topbar-agent">
+            <div class="kth-agent-avatar-circle">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="8" width="16" height="12" rx="4"></rect>
+                <circle cx="9" cy="14" r="1.5" fill="currentColor"></circle>
+                <circle cx="15" cy="14" r="1.5" fill="currentColor"></circle>
+                <path d="M12 4v4"></path>
+                <circle cx="12" cy="2.5" r="1.5" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <div class="kth-agent-info">
+              <h3 class="kth-agent-title">Kabeer AI Assistant</h3>
+              <div class="kth-agent-status">
+                <span class="kth-status-dot-mini"></span>
+                <span>Online</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="kth-topbar-actions">
+            <!-- Ambient Illumination Toggle -->
+            <button type="button" class="kth-ctrl-btn" id="kth-btn-illumination" title="Toggle Ambient Glow">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </button>
+            <!-- Fullscreen / Expand Toggle -->
+            <button type="button" class="kth-ctrl-btn" id="kth-btn-expand" title="Toggle Fullscreen Window">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <polyline points="9 21 3 21 3 15"></polyline>
+                <line x1="21" y1="3" x2="14" y2="10"></line>
+                <line x1="3" y1="21" x2="10" y2="14"></line>
+              </svg>
+            </button>
+            <!-- Close Modal -->
+            <button type="button" class="kth-ctrl-btn kth-close-btn" id="kth-btn-close" title="Close Assistant">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <!-- Scrollable Conversation & Welcome Area -->
+        <div class="kth-chat-scrollarea" id="kth-chat-scrollarea">
+          <!-- Welcome Screen -->
+          <div class="kth-welcome-view" id="kth-welcome-view">
+            <!-- Animated Gold Mascot Orb with Orbiting Rings -->
+            <div class="kth-mascot-container">
+              <div class="kth-mascot-aura"></div>
+              <div class="kth-orbital-ring kth-ring-1"></div>
+              <div class="kth-orbital-ring kth-ring-2"></div>
+              <div class="kth-mascot-head">
+                <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="8" width="16" height="12" rx="4"></rect>
+                  <circle cx="9" cy="14" r="1.6" fill="currentColor"></circle>
+                  <circle cx="15" cy="14" r="1.6" fill="currentColor"></circle>
+                  <path d="M12 4v4"></path>
+                  <circle cx="12" cy="2.5" r="1.5" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <div class="kth-speech-badge">
+                <span class="kth-dot-matrix"></span>
+                <span class="kth-dot-matrix"></span>
+                <span class="kth-dot-matrix"></span>
+              </div>
+            </div>
+
+            <!-- Welcome Headlines -->
+            <h1 class="kth-welcome-headline">Hello! I'm <span class="kth-gold-gradient-text">Kabeer AI</span></h1>
+            <p class="kth-welcome-subtitle">Your AI assistant for automation, web development, digital solutions and more 🚀</p>
+
+            <!-- Featured "Ask me anything!" Card -->
+            <div class="kth-featured-card" id="kth-featured-card" role="button" tabindex="0">
+              <div class="kth-featured-icon-circle">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="9" y1="18" x2="15" y2="18"></line>
+                  <line x1="10" y1="22" x2="14" y2="22"></line>
+                  <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+                </svg>
+              </div>
+              <div class="kth-featured-content">
+                <h4 class="kth-featured-title">Ask me anything!</h4>
+                <p class="kth-featured-desc">I can help you with AI automation, web development, digital tools, project ideas, and much more.</p>
+              </div>
+            </div>
+
+            <!-- Suggestions Divider -->
+            <div class="kth-divider-label">
+              <span class="kth-divider-line"></span>
+              <span class="kth-divider-text">QUICK SUGGESTIONS</span>
+              <span class="kth-divider-line"></span>
+            </div>
+
+            <!-- 2x2 Quick Suggestions Grid -->
+            <div class="kth-suggestions-grid">
+              <!-- Suggestion 1 -->
+              <button type="button" class="kth-suggestion-card" data-prompt="Can you help me build a modern high-performance website?">
+                <div class="kth-card-left">
+                  <div class="kth-card-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                  </div>
+                  <div class="kth-card-texts">
+                    <span class="kth-card-title">Build a website</span>
+                    <span class="kth-card-desc">Get help with web development</span>
+                  </div>
+                </div>
+                <div class="kth-card-chevron">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </button>
+
+              <!-- Suggestion 2 -->
+              <button type="button" class="kth-suggestion-card" data-prompt="How can AI automation and custom n8n workflows streamline my business operations?">
+                <div class="kth-card-left">
+                  <div class="kth-card-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="3"></circle>
+                      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                  </div>
+                  <div class="kth-card-texts">
+                    <span class="kth-card-title">AI Automation</span>
+                    <span class="kth-card-desc">Automate your workflow</span>
+                  </div>
+                </div>
+                <div class="kth-card-chevron">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </button>
+
+              <!-- Suggestion 3 -->
+              <button type="button" class="kth-suggestion-card" data-prompt="What are some innovative AI agent and digital project ideas for my business?">
+                <div class="kth-card-left">
+                  <div class="kth-card-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="9" y1="18" x2="15" y2="18"></line>
+                      <line x1="10" y1="22" x2="14" y2="22"></line>
+                      <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+                    </svg>
+                  </div>
+                  <div class="kth-card-texts">
+                    <span class="kth-card-title">Project Ideas</span>
+                    <span class="kth-card-desc">Get innovative ideas</span>
+                  </div>
+                </div>
+                <div class="kth-card-chevron">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </button>
+
+              <!-- Suggestion 4 -->
+              <button type="button" class="kth-suggestion-card" data-prompt="What digital solutions, technical services, and systems do you provide?">
+                <div class="kth-card-left">
+                  <div class="kth-card-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                  </div>
+                  <div class="kth-card-texts">
+                    <span class="kth-card-title">Digital Solutions</span>
+                    <span class="kth-card-desc">Explore my services</span>
+                  </div>
+                </div>
+                <div class="kth-card-chevron">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Active Messages View -->
+          <div class="kth-messages-view" id="kth-messages-view" style="display: none;">
+            <div class="kth-messages-list" id="kth-messages-list"></div>
+            <!-- Typing Indicator -->
+            <div class="kth-typing-indicator" id="kth-typing-indicator" style="display: none;">
+              <div class="kth-typing-avatar">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="8" width="16" height="12" rx="4"></rect>
+                  <circle cx="9" cy="14" r="1.5" fill="currentColor"></circle>
+                  <circle cx="15" cy="14" r="1.5" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <div class="kth-typing-bubble">
+                <span class="kth-typing-dot"></span>
+                <span class="kth-typing-dot"></span>
+                <span class="kth-typing-dot"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Input Bar -->
+        <footer class="kth-chat-input-bar">
+          <form class="kth-input-pill" id="kth-chat-form">
+            <!-- Attachment Icon -->
+            <button type="button" class="kth-attach-btn" id="kth-btn-attach" title="Attach context or project details">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+              </svg>
+            </button>
+            <!-- Message Input Field -->
+            <input type="text" id="kth-chat-input" class="kth-chat-input" placeholder="Type your message..." autocomplete="off">
+            <!-- Send Button -->
+            <button type="submit" class="kth-send-btn" id="kth-btn-send" title="Send message" aria-label="Send message">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/kabeer-chat.js"></script>
 </body>
 </html>
