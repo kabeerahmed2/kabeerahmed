@@ -13,10 +13,11 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Privacy Policy for Kabeer Tech Hub and kabeerahmed1.netlify.app — Transparent terms regarding data collection, client privacy, third-party integrations, and security standards.">
+  <meta name="description" content="Privacy Policy for Kabeer Tech Hub and kabeerahmed1.netlify.app — Comprehensive policy detailing Google API Limited Use compliance, data collection, third-party services, cookies, and user privacy rights.">
   
-  <!-- Google Site Verification (Google Search Console) -->
-  <meta name="google-site-verification" content="Fs4xITOOnbKU0D0FPbjXmHjaKdt203lbn8oOeNmrx_Y">
+  <!-- Google Site Verification (Google Cloud Console & Google Search Console) -->
+  <meta name="google-site-verification" content="guzfAJY2IHMY6DXBy7CCVzL11vW_Xj1kzNdT9Yt1AlI" />
+  <meta name="google-site-verification" content="Fs4xITOOnbKU0D0FPbjXmHjaKdt203lbn8oOeNmrx_Y" />
   
   <title>Privacy Policy — Kabeer Tech Hub</title>
   
@@ -28,9 +29,39 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   
+  <!-- Tailwind CSS CDN for modern responsive utility styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandGold: {
+              300: '#F5D38E',
+              400: '#E6B96D',
+              500: '#D6B477',
+              600: '#b3924f'
+            },
+            darkBg: {
+              900: '#0B0B0A',
+              950: '#070605'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Manrope', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace'],
+            cursive: ['Caveat', 'cursive']
+          }
+        }
+      }
+    };
+  </script>
+
   <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body class="luxury-theme">
+<body class="luxury-theme text-slate-300 bg-neutral-950 font-sans antialiased selection:bg-amber-500/30 selection:text-amber-200">
 
   <!-- ============================================================
        LAYER 1: CINEMATIC FIXED BACKGROUND VIDEO LAYER
@@ -81,253 +112,327 @@
   </header>
 
   <!-- ============================================================
-       MAIN CONTENT: PRIVACY POLICY ARCHITECTURE
+       MAIN CONTENT: PRIVACY POLICY ARCHITECTURE (GOOGLE CLOUD COMPLIANT)
        ============================================================ -->
-  <main class="legal-page-main">
-    <div class="legal-container">
-
-      <!-- Breadcrumb Return Link -->
-      <a href="/#hero" class="legal-breadcrumb">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+  <main class="relative z-10 pt-28 pb-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+    
+    <!-- Breadcrumb Return Link -->
+    <div class="mb-8">
+      <a href="/#hero" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-neutral-900/80 border border-amber-500/20 text-slate-300 hover:text-white hover:border-amber-400 hover:shadow-[0_0_15px_rgba(230,185,109,0.3)] transition-all duration-200 backdrop-blur-xl">
+        <svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
         <span>Back to Portfolio</span>
       </a>
+    </div>
 
-      <!-- Hero Header -->
-      <header class="legal-hero-header">
-        <div class="legal-badge">
-          <span>Legal Architecture &amp; Compliance</span>
-          <span>•</span>
-          <span>Effective: October 2026</span>
+    <!-- Hero Header Card -->
+    <header class="mb-12 p-8 sm:p-10 rounded-3xl bg-neutral-900/80 border border-amber-500/25 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.7)] relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-amber-500/10 blur-3xl pointer-events-none"></div>
+      
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-xs font-semibold uppercase tracking-wider mb-5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Google Cloud &amp; API Compliance Ready • Updated: October 2026</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight mb-4 leading-tight">
+        Privacy Policy
+      </h1>
+      <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
+        This Privacy Policy governs the collection, processing, protection, and management of data across the web application hosted at <a href="https://kabeerahmed1.netlify.app" class="text-amber-400 hover:underline font-semibold">https://kabeerahmed1.netlify.app</a> and the engineering services provided by <strong>Kabeer Tech Hub</strong> and its founder, <strong>Abdul Kabeer</strong>. It explicitly details our compliance with the <strong>Google API Services User Data Policy</strong>, our use of cookies, and your privacy rights.
+      </p>
+
+      <!-- Key Metadata Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 pt-6 border-t border-amber-500/15">
+        <div class="flex flex-col">
+          <span class="text-xs uppercase font-mono tracking-wider text-amber-400/90 font-semibold mb-1">Company / Entity</span>
+          <span class="text-sm font-semibold text-white">Kabeer Tech Hub / Abdul Kabeer</span>
         </div>
-        <h1 class="legal-title">Privacy Policy</h1>
-        <p class="legal-subtitle">
-          This Privacy Policy transparently describes how <strong>Kabeer Tech Hub</strong> and its founder, <strong>Abdul Kabeer</strong>, collect, process, protect, and handle data across the web application located at <a href="https://kabeerahmed1.netlify.app" class="legal-link" style="color: var(--gold-champagne);">kabeerahmed1.netlify.app</a>, custom client automations, and associated digital services.
+        <div class="flex flex-col">
+          <span class="text-xs uppercase font-mono tracking-wider text-amber-400/90 font-semibold mb-1">Website URL</span>
+          <a href="https://kabeerahmed1.netlify.app" class="text-sm font-semibold text-amber-300 hover:underline">kabeerahmed1.netlify.app</a>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xs uppercase font-mono tracking-wider text-amber-400/90 font-semibold mb-1">Contact Email</span>
+          <a href="mailto:kb57goodplayer@gmail.com" class="text-sm font-semibold text-amber-300 hover:underline">kb57goodplayer@gmail.com</a>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xs uppercase font-mono tracking-wider text-amber-400/90 font-semibold mb-1">Location</span>
+          <span class="text-sm font-semibold text-white">Karachi, Sindh, Pakistan</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Quick Navigation Pills -->
+    <nav class="mb-10 p-5 rounded-2xl bg-neutral-900/70 border border-amber-500/20 backdrop-blur-xl" aria-label="Table of Contents">
+      <div class="flex items-center gap-2 mb-3 text-xs font-mono font-bold uppercase tracking-wider text-amber-400">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        <span>Table of Contents</span>
+      </div>
+      <div class="flex flex-wrap gap-2 text-xs">
+        <a href="#introduction" class="px-3 py-1.5 rounded-full bg-neutral-800/80 border border-amber-500/20 text-slate-300 hover:text-white hover:border-amber-400 hover:bg-neutral-800 transition">1. Introduction</a>
+        <a href="#information-we-collect" class="px-3 py-1.5 rounded-full bg-neutral-800/80 border border-amber-500/20 text-slate-300 hover:text-white hover:border-amber-400 hover:bg-neutral-800 transition">2. Information We Collect</a>
+        <a href="#how-we-use-information" class="px-3 py-1.5 rounded-full bg-neutral-800/80 border border-amber-500/20 text-slate-300 hover:text-white hover:border-amber-400 hover:bg-neutral-800 transition">3. How We Use Information</a>
+        <a href="#google-api-services" class="px-3 py-1.5 rounded-full bg-neutral-800/80 border border-amber-500/40 text-amber-300 hover:text-white hover:border-amber-400 hover:bg-amber-500/10 transition font-semibold">4. Google API &amp; Third-Party Services</a>
+        <a href="#cookies-and-tracking" class="px-3 py-1.5 rounded-full bg-neutral-800/80 border border-amber-500/20 text-slate-300 hover:text-white hover:border-amber-400 hover:bg-neutral-800 transition">5. Cookies &amp; Tracking</a>
+        <a href="#data-security" class="px-3 py-1.5 rounded-full bg-neutral-800/80 border border-amber-500/20 text-slate-300 hover:text-white hover:border-amber-400 hover:bg-neutral-800 transition">6. Data Security</a>
+        <a href="#your-rights" class="px-3 py-1.5 rounded-full bg-neutral-800/80 border border-amber-500/20 text-slate-300 hover:text-white hover:border-amber-400 hover:bg-neutral-800 transition">7. Your Rights</a>
+        <a href="#contact-information" class="px-3 py-1.5 rounded-full bg-neutral-800/80 border border-amber-500/20 text-slate-300 hover:text-white hover:border-amber-400 hover:bg-neutral-800 transition">8. Contact Information</a>
+      </div>
+    </nav>
+
+    <!-- Main Legal Content Sections Stack -->
+    <div class="space-y-8 text-sm sm:text-base leading-relaxed">
+
+      <!-- 1. Introduction -->
+      <section id="introduction" class="scroll-mt-28 p-6 sm:p-8 rounded-3xl bg-neutral-900/80 border border-amber-500/20 backdrop-blur-2xl shadow-xl hover:border-amber-500/35 transition duration-300">
+        <div class="flex items-center gap-3.5 pb-4 mb-5 border-b border-amber-500/15">
+          <span class="font-mono font-bold text-amber-400 text-sm px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20">01</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white font-heading">Introduction</h2>
+        </div>
+        <p class="mb-4">
+          Welcome to <strong>Kabeer Tech Hub</strong>. This Privacy Policy strictly applies to the website accessible at <a href="https://kabeerahmed1.netlify.app" class="text-amber-400 underline underline-offset-4">https://kabeerahmed1.netlify.app</a>, owned, developed, and maintained by <strong>Abdul Kabeer</strong> ("we", "us", "our"), based in Karachi, Pakistan.
+        </p>
+        <p class="mb-4">
+          We provide digital engineering, software architecture, autonomous AI automation systems (e.g. n8n workflows, generative AI agent pipelines), custom web application development, and client consulting services. We are firmly committed to protecting the privacy, confidentiality, and security of our visitors, clients, and partners.
+        </p>
+        <p>
+          By accessing our site, interacting with our embedded AI consultant, or authorizing integrations connecting Google Cloud Console APIs or third-party webhooks, you accept the practices outlined in this policy.
+        </p>
+      </section>
+
+      <!-- 2. Information We Collect -->
+      <section id="information-we-collect" class="scroll-mt-28 p-6 sm:p-8 rounded-3xl bg-neutral-900/80 border border-amber-500/20 backdrop-blur-2xl shadow-xl hover:border-amber-500/35 transition duration-300">
+        <div class="flex items-center gap-3.5 pb-4 mb-5 border-b border-amber-500/15">
+          <span class="font-mono font-bold text-amber-400 text-sm px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20">02</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white font-heading">Information We Collect</h2>
+        </div>
+        <p class="mb-5">
+          We collect only information necessary to deliver our services, execute automations, scope engineering projects, and ensure high platform reliability:
         </p>
 
-        <!-- Metadata Summary Box -->
-        <div class="legal-metadata-grid">
-          <div class="meta-item">
-            <span class="meta-label">Governing Entity</span>
-            <span class="meta-value">Abdul Kabeer / Kabeer Tech Hub</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="p-5 rounded-2xl bg-neutral-950/60 border border-amber-500/15">
+            <h3 class="text-base font-bold text-amber-300 mb-2 flex items-center gap-2">
+              <span class="text-amber-400">✦</span> Personal &amp; Contact Details
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300">
+              When you submit an inquiry through our consultation forms, hire request sections, or AI chatbot, we collect your Name, Email address (<a href="mailto:kb57goodplayer@gmail.com" class="text-amber-300 hover:underline">kb57goodplayer@gmail.com</a> is our recipient), WhatsApp/phone number, company name, and technical project brief.
+            </p>
           </div>
-          <div class="meta-item">
-            <span class="meta-label">Production Domain</span>
-            <span class="meta-value">kabeerahmed1.netlify.app</span>
+
+          <div class="p-5 rounded-2xl bg-neutral-950/60 border border-amber-500/15">
+            <h3 class="text-base font-bold text-amber-300 mb-2 flex items-center gap-2">
+              <span class="text-amber-400">✦</span> Google Account &amp; OAuth Data
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300">
+              If you authenticate custom workflows using Google OAuth 2.0 (such as Gmail API, Google Sheets API, or Google Drive for custom automations), we temporarily process authorized access tokens and user profile emails exclusively to perform user-instructed tasks.
+            </p>
           </div>
-          <div class="meta-item">
-            <span class="meta-label">Jurisdiction</span>
-            <span class="meta-value">Pakistan &amp; International Best Practices</span>
+
+          <div class="p-5 rounded-2xl bg-neutral-950/60 border border-amber-500/15">
+            <h3 class="text-base font-bold text-amber-300 mb-2 flex items-center gap-2">
+              <span class="text-amber-400">✦</span> Usage Data &amp; Telemetry
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300">
+              Information automatically collected upon visiting our site includes IP addresses, browser specifications, operating system versions, referral URLs, interaction telemetry, and timestamped page visits.
+            </p>
           </div>
-          <div class="meta-item">
-            <span class="meta-label">Primary Privacy Contact</span>
-            <span class="meta-value">contact@kabeerai.tech</span>
+
+          <div class="p-5 rounded-2xl bg-neutral-950/60 border border-amber-500/15">
+            <h3 class="text-base font-bold text-amber-300 mb-2 flex items-center gap-2">
+              <span class="text-amber-400">✦</span> Cookies &amp; Persistent State
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300">
+              Local storage tokens (such as <code>kth_ai_session_id</code> used solely to preserve conversation continuity with our on-site AI assistant) and Google Analytics performance tracking cookies.
+            </p>
           </div>
         </div>
-      </header>
+      </section>
 
-      <!-- Table of Contents Quick Nav -->
-      <nav class="legal-toc-bar" aria-label="Table of Contents">
-        <div class="legal-toc-title">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-          <span>Contents Navigation</span>
+      <!-- 3. How We Use Your Information -->
+      <section id="how-we-use-information" class="scroll-mt-28 p-6 sm:p-8 rounded-3xl bg-neutral-900/80 border border-amber-500/20 backdrop-blur-2xl shadow-xl hover:border-amber-500/35 transition duration-300">
+        <div class="flex items-center gap-3.5 pb-4 mb-5 border-b border-amber-500/15">
+          <span class="font-mono font-bold text-amber-400 text-sm px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20">03</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white font-heading">How We Use Your Information</h2>
         </div>
-        <div class="legal-toc-pills">
-          <a href="#sec-intro" class="legal-toc-pill">01. Introduction</a>
-          <a href="#sec-collected" class="legal-toc-pill">02. Information Collected</a>
-          <a href="#sec-usage" class="legal-toc-pill">03. Use of Information</a>
-          <a href="#sec-thirdparty" class="legal-toc-pill">04. Third-Party Services</a>
-          <a href="#sec-security" class="legal-toc-pill">05. Data Protection &amp; Storage</a>
-          <a href="#sec-rights" class="legal-toc-pill">06. User Rights</a>
-          <a href="#sec-contact" class="legal-toc-pill">07. Contact &amp; Inquiries</a>
+        <p class="mb-4">All data processed by Kabeer Tech Hub is used exclusively for targeted, legitimate purposes:</p>
+        <ul class="space-y-2.5 pl-2 mb-4">
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 mt-1">✦</span>
+            <span><strong>Executing Client Workflows &amp; Automations:</strong> Deploying n8n pipelines, AI agents, WhatsApp business integrations, and software architectures as commissioned by the client.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 mt-1">✦</span>
+            <span><strong>Consultation &amp; Proposal Scoping:</strong> Reviewing incoming technical inquiries, generating comprehensive architectural estimates, sending service quotes, and maintaining direct client communication.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 mt-1">✦</span>
+            <span><strong>Platform Reliability &amp; Defense:</strong> Conducting diagnostics, monitoring edge CDN performance, preventing form spam, and safeguarding our web applications against cyber threats.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 mt-1">✦</span>
+            <span><strong>Analytics &amp; Optimization:</strong> Reviewing traffic patterns via Google Analytics to enhance portfolio presentation, project walkthrough streaming, and user experience.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 4. Google API & Third-Party Services (CRITICAL FOR GOOGLE CLOUD CONSOLE VERIFICATION) -->
+      <section id="google-api-services" class="scroll-mt-28 p-6 sm:p-8 rounded-3xl bg-neutral-900/90 border-2 border-amber-500/40 backdrop-blur-2xl shadow-[0_0_30px_rgba(230,185,109,0.15)] relative">
+        <div class="flex items-center gap-3.5 pb-4 mb-5 border-b border-amber-500/20">
+          <span class="font-mono font-bold text-amber-400 text-sm px-2.5 py-1 rounded bg-amber-500/15 border border-amber-500/30">04</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white font-heading">Google API &amp; Third-Party Services</h2>
         </div>
-      </nav>
+        
+        <p class="mb-4">
+          Our applications and automation architectures integrate with Google Cloud APIs (including the <strong>Gmail API</strong>, <strong>Google Sheets API</strong>, <strong>Google Drive API</strong>, and <strong>Google Analytics</strong>) to execute specific automations requested by clients.
+        </p>
 
-      <!-- Legal Content Stack -->
-      <div class="legal-content-stack">
+        <!-- Mandatory Google Limited Use Statement Box -->
+        <div class="p-6 rounded-2xl bg-amber-950/20 border border-amber-500/40 mb-6 relative">
+          <h3 class="text-base sm:text-lg font-bold text-amber-300 mb-2 flex items-center gap-2">
+            <svg class="w-5 h-5 text-amber-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Google API Services User Data Policy — Limited Use Disclosure</span>
+          </h3>
+          <p class="text-white text-sm sm:text-base font-medium leading-relaxed mb-3">
+            <strong>Kabeer Tech Hub's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" class="text-amber-400 underline font-bold hover:text-amber-300">Google API Services User Data Policy</a>, including the Limited Use requirements.</strong>
+          </p>
+          <p class="text-xs sm:text-sm text-slate-300">
+            Specifically, when our systems interact with Google user data (such as emails via Gmail API or documents via Google Sheets/Drive):
+          </p>
+          <ul class="mt-2.5 space-y-1.5 text-xs sm:text-sm text-slate-300 pl-4 list-disc">
+            <li><strong>No AI/ML Model Training:</strong> Google user data is <em>NEVER</em> used to develop, train, or fine-tune generalized, non-personalized artificial intelligence or machine learning models.</li>
+            <li><strong>No Selling or Unauthorized Transfer:</strong> Google user data is <em>NEVER</em> sold, rented, leased, or transferred to third-party data brokers or marketing services.</li>
+            <li><strong>Strict Human Access Restrictions:</strong> Humans do not read Google user data unless we have the user's explicit prior written consent for troubleshooting a specific bug, it is strictly necessary for security purposes, or as mandated by law.</li>
+          </ul>
+        </div>
 
-        <!-- 01. Introduction -->
-        <section class="legal-card" id="sec-intro">
-          <div class="legal-card-header">
-            <span class="legal-card-num">01</span>
-            <h2 class="legal-card-title">Introduction &amp; Scope</h2>
+        <h3 class="text-base font-bold text-white mb-3">Third-Party Service Providers &amp; Subprocessors</h3>
+        <p class="mb-3 text-sm text-slate-300">
+          We partner with leading technical providers to operate our cloud infrastructure. Each operates under strict confidentiality and privacy agreements:
+        </p>
+        <ul class="space-y-2 text-sm text-slate-300 pl-2">
+          <li class="flex items-start gap-2">
+            <span class="text-amber-400">✦</span>
+            <span><strong>Netlify, Inc.:</strong> Global CDN edge hosting, continuous deployment, automated SSL/TLS encryption, and serverless form submission capture.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-400">✦</span>
+            <span><strong>Google LLC:</strong> Google Analytics (Measurement ID: <code>G-CZ4T9GW3C0</code>) for aggregated traffic analysis and Google AdSense for contextually relevant display metrics.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-400">✦</span>
+            <span><strong>n8n Workflow Engine:</strong> Self-hosted automation instance operating via <code>kabeerai.tech</code> for executing client-commissioned webhooks and background tasks.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-amber-400">✦</span>
+            <span><strong>WhatsApp Cloud API (Meta Platforms, Inc.):</strong> Automated messaging bridges for client customer support workflows.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 5. Cookies & Tracking Technologies -->
+      <section id="cookies-and-tracking" class="scroll-mt-28 p-6 sm:p-8 rounded-3xl bg-neutral-900/80 border border-amber-500/20 backdrop-blur-2xl shadow-xl hover:border-amber-500/35 transition duration-300">
+        <div class="flex items-center gap-3.5 pb-4 mb-5 border-b border-amber-500/15">
+          <span class="font-mono font-bold text-amber-400 text-sm px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20">05</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white font-heading">Cookies &amp; Tracking Technologies</h2>
+        </div>
+        <p class="mb-4">
+          Our website utilizes cookies and local storage tokens to ensure core functionality, preserve chat assistant context, and gather anonymous analytics:
+        </p>
+        <ul class="space-y-2.5 pl-2 mb-5">
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 mt-1">✦</span>
+            <span><strong>Essential Cookies &amp; Local Storage:</strong> Required for website navigation, user session retention in our AI assistant (stored locally under <code>kth_ai_session_id</code>), and secure form token authentication.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 mt-1">✦</span>
+            <span><strong>Google Analytics Cookies:</strong> Analyzes anonymous visitor traffic, device categories, and bounce rates without profiling personal identities.</span>
+          </li>
+        </ul>
+        <div class="p-4 rounded-xl bg-neutral-950/60 border border-amber-500/15 text-xs sm:text-sm text-slate-300">
+          <strong>Managing Cookies:</strong> You can configure your browser to decline all cookies or to alert you when a cookie is being set. You may also install the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-amber-400 underline">Google Analytics Opt-out Browser Add-on</a> to disable tracking telemetry entirely.
+        </div>
+      </section>
+
+      <!-- 6. Data Security, Retention & Storage -->
+      <section id="data-security" class="scroll-mt-28 p-6 sm:p-8 rounded-3xl bg-neutral-900/80 border border-amber-500/20 backdrop-blur-2xl shadow-xl hover:border-amber-500/35 transition duration-300">
+        <div class="flex items-center gap-3.5 pb-4 mb-5 border-b border-amber-500/15">
+          <span class="font-mono font-bold text-amber-400 text-sm px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20">06</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white font-heading">Data Security &amp; Storage Protocols</h2>
+        </div>
+        <p class="mb-4">
+          We maintain rigorous engineering controls to safeguard personal and business data against unauthorized access, alteration, or disclosure:
+        </p>
+        <ul class="space-y-2.5 pl-2 mb-4">
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 mt-1">✦</span>
+            <span><strong>Enterprise Transport Encryption:</strong> All traffic traversing <code>kabeerahmed1.netlify.app</code> is secured with 256-bit SSL/TLS cryptographic encryption.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 mt-1">✦</span>
+            <span><strong>Strict Zero-Sale Standard:</strong> Kabeer Tech Hub explicitly guarantees that <strong>we do not sell, rent, lease, or monetize personal or client information</strong> to third-party data aggregators or advertisers.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="text-amber-400 mt-1">✦</span>
+            <span><strong>API Token Isolation:</strong> Any client OAuth tokens, API secrets, or credentials required for custom workflows are housed in secure, access-controlled environment variables and rotated or deleted post-deployment.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 7. Your Rights & Privacy Controls -->
+      <section id="your-rights" class="scroll-mt-28 p-6 sm:p-8 rounded-3xl bg-neutral-900/80 border border-amber-500/20 backdrop-blur-2xl shadow-xl hover:border-amber-500/35 transition duration-300">
+        <div class="flex items-center gap-3.5 pb-4 mb-5 border-b border-amber-500/15">
+          <span class="font-mono font-bold text-amber-400 text-sm px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20">07</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white font-heading">Your Rights &amp; Privacy Controls</h2>
+        </div>
+        <p class="mb-4">
+          Under international privacy standards and applicable local regulations, you hold complete control over your personal data:
+        </p>
+        <ul class="space-y-2 pl-2 mb-5">
+          <li class="flex items-start gap-2"><span class="text-amber-400">✦</span> <span><strong>Right to Access:</strong> You can request a full summary of personal contact records we have retained regarding your inquiries.</span></li>
+          <li class="flex items-start gap-2"><span class="text-amber-400">✦</span> <span><strong>Right to Erasure ("Right to be Forgotten"):</strong> You may request the immediate, permanent deletion of your contact records from our messaging databases.</span></li>
+          <li class="flex items-start gap-2"><span class="text-amber-400">✦</span> <span><strong>Right to Rectification:</strong> You may request corrections to any inaccurate contact information.</span></li>
+          <li class="flex items-start gap-2"><span class="text-amber-400">✦</span> <span><strong>Google Account Permission Revocation:</strong> You can review or revoke any Google OAuth permissions granted to our applications at any time directly through the <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" class="text-amber-400 font-semibold underline">Google Security Permissions Hub</a>.</span></li>
+        </ul>
+        <p class="text-sm text-slate-300">
+          To exercise any of these rights, simply email us directly at <a href="mailto:kb57goodplayer@gmail.com" class="text-amber-300 font-bold hover:underline">kb57goodplayer@gmail.com</a>.
+        </p>
+      </section>
+
+      <!-- 8. Contact Information -->
+      <section id="contact-information" class="scroll-mt-28 p-6 sm:p-8 rounded-3xl bg-neutral-900/80 border border-amber-500/20 backdrop-blur-2xl shadow-xl hover:border-amber-500/35 transition duration-300">
+        <div class="flex items-center gap-3.5 pb-4 mb-5 border-b border-amber-500/15">
+          <span class="font-mono font-bold text-amber-400 text-sm px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20">08</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white font-heading">Contact Information</h2>
+        </div>
+        <p class="mb-5">
+          For legal inquiries, Google Cloud Console verification reviews, or data privacy requests, contact <strong>Abdul Kabeer</strong> / <strong>Kabeer Tech Hub</strong> directly:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div class="p-5 rounded-2xl bg-neutral-950/60 border border-amber-500/15">
+            <h3 class="text-xs font-mono font-bold uppercase text-amber-400 mb-1">Direct Contact Email</h3>
+            <a href="mailto:kb57goodplayer@gmail.com" class="text-base font-bold text-white hover:text-amber-300 transition">kb57goodplayer@gmail.com</a>
+            <p class="text-xs text-slate-400 mt-1">Direct developer &amp; legal compliance inbox</p>
           </div>
-          <div class="legal-card-body">
-            <p>
-              Welcome to <strong>Kabeer Tech Hub</strong>. This Privacy Policy strictly governs the digital portfolio, client intake channels, and agency operations hosted at <strong>kabeerahmed1.netlify.app</strong>, including all technical consulting, custom software development, AI automation workflows (including autonomous n8n workflows and agentic pipelines), API integrations, and related digital solutions engineered by <strong>Abdul Kabeer</strong> ("we", "us", or "our").
-            </p>
-            <p>
-              We prioritize data privacy, engineering transparency, and confidential client data isolation. By accessing our website, interacting with our embedded AI consultant widget, or submitting inquiries through our contact forms, you acknowledge the data handling practices set forth in this policy.
-            </p>
+
+          <div class="p-5 rounded-2xl bg-neutral-950/60 border border-amber-500/15">
+            <h3 class="text-xs font-mono font-bold uppercase text-amber-400 mb-1">Headquarters &amp; Jurisdiction</h3>
+            <p class="text-base font-bold text-white">Karachi, Sindh, Pakistan</p>
+            <p class="text-xs text-slate-400 mt-1">Operating under Pakistan law &amp; global consumer standards</p>
           </div>
-        </section>
+        </div>
 
-        <!-- 02. Information Collected -->
-        <section class="legal-card" id="sec-collected">
-          <div class="legal-card-header">
-            <span class="legal-card-num">02</span>
-            <h2 class="legal-card-title">Information We Collect</h2>
-          </div>
-          <div class="legal-card-body">
-            <p>
-              We collect information to facilitate technical communication, scope client engineering projects, and ensure the optimal performance of our website. The categories of information collected include:
-            </p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="mailto:kb57goodplayer@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm bg-gradient-to-r from-amber-400 to-amber-500 text-neutral-950 hover:from-amber-300 hover:to-amber-400 hover:shadow-[0_0_25px_rgba(230,185,109,0.5)] transition duration-200">
+            <span>Email kb57goodplayer@gmail.com</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </a>
+          <a href="/#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm bg-neutral-900 border border-amber-500/30 text-amber-300 hover:text-white hover:border-amber-400 transition duration-200">
+            <span>Open Consultation Form</span>
+          </a>
+        </div>
+      </section>
 
-            <div class="legal-sub-grid">
-              <div class="legal-sub-card">
-                <h3 class="legal-sub-title">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                  <span>Contact &amp; Client Data</span>
-                </h3>
-                <p>
-                  Name, email address, WhatsApp / phone number, company name, project specifications, and query text submitted voluntarily via our contact form, consultation scheduler, or AI chat assistant widget.
-                </p>
-              </div>
-
-              <div class="legal-sub-card">
-                <h3 class="legal-sub-title">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                  <span>Usage &amp; Telemetry Data</span>
-                </h3>
-                <p>
-                  Browser type and version, operating system, hardware device class, IP address, referral URLs, pages visited, time spent per view, interaction clicks, and diagnostic performance metrics.
-                </p>
-              </div>
-
-              <div class="legal-sub-card">
-                <h3 class="legal-sub-title">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                  <span>Cookies &amp; Tracking Tech</span>
-                </h3>
-                <p>
-                  Standard session tokens, local storage state (such as chat session identifiers for dialogue continuity), Google Analytics tags (<code>gtag.js</code>), and Google AdSense tracking scripts.
-                </p>
-              </div>
-            </div>
-
-            <div class="legal-callout-box">
-              <span class="legal-callout-icon">ℹ</span>
-              <div class="legal-callout-text">
-                <strong>Data Minimization Standard:</strong> We never request sensitive financial information, banking credentials, or private credentials through public intake forms. Any client API keys or production tokens shared for automation deployment are handled through secure, encrypted communication protocols.
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- 03. Use of Information -->
-        <section class="legal-card" id="sec-usage">
-          <div class="legal-card-header">
-            <span class="legal-card-num">03</span>
-            <h2 class="legal-card-title">How We Use Information</h2>
-          </div>
-          <div class="legal-card-body">
-            <p>The information collected is used exclusively for legitimate business, engineering, and operational purposes:</p>
-            <ul class="legal-highlight-list">
-              <li><strong>Project Evaluation &amp; Consultation:</strong> Reviewing client requirements, preparing architectural proposals, generating service quotes, and maintaining direct communication via email or WhatsApp.</li>
-              <li><strong>Custom Solution Deployment:</strong> Configuring, testing, and deploying agreed-upon AI automations (e.g., n8n workflows, CRM webhooks, WhatsApp bots, and web applications).</li>
-              <li><strong>System Diagnostics &amp; Security:</strong> Monitoring website health, identifying broken links or rendering bugs, preventing malicious bot submissions, and safeguarding server endpoints against unauthorized access.</li>
-              <li><strong>Analytics &amp; Site Evolution:</strong> Assessing traffic patterns through Google Analytics to optimize portfolio presentation, case study readability, and video walkthrough streaming performance.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- 04. Third-Party Services -->
-        <section class="legal-card" id="sec-thirdparty">
-          <div class="legal-card-header">
-            <span class="legal-card-num">04</span>
-            <h2 class="legal-card-title">Third-Party Services &amp; Subprocessors</h2>
-          </div>
-          <div class="legal-card-body">
-            <p>
-              To maintain high uptime, global performance, and modern automation features, we partner with industry-standard third-party providers. Each provider processes telemetry or operational data under their independent privacy frameworks:
-            </p>
-
-            <ul class="legal-highlight-list">
-              <li><strong>Hosting &amp; Edge Delivery:</strong> <strong>Netlify, Inc.</strong> provides edge hosting, global CDN caching, automated SSL/TLS termination, and secure static form submission processing.</li>
-              <li><strong>Analytics &amp; Ad Measurement:</strong> <strong>Google LLC</strong> provides <strong>Google Analytics</strong> (tag ID: <code>G-CZ4T9GW3C0</code>) to evaluate anonymous visitor engagement and <strong>Google AdSense</strong> for relevant ad delivery and attribution.</li>
-              <li><strong>Automation Engine &amp; Webhooks:</strong> Autonomous workflows and chat endpoints are processed through our self-hosted / cloud <strong>n8n workflow instance</strong> (operating via <code>kabeerai.tech</code>).</li>
-              <li><strong>Communication Gateways:</strong> When requested by clients, integrations communicate with the <strong>WhatsApp Cloud API (Meta Platforms, Inc.)</strong>, Formspree, or EmailJS for transactional alerts and messaging.</li>
-            </ul>
-            <p>
-              We do not permit these third-party subprocessors to utilize your personal data for independent marketing purposes beyond providing their contractual technical services to us.
-            </p>
-          </div>
-        </section>
-
-        <!-- 05. Data Protection & Storage -->
-        <section class="legal-card" id="sec-security">
-          <div class="legal-card-header">
-            <span class="legal-card-num">05</span>
-            <h2 class="legal-card-title">Data Protection, Storage &amp; Zero-Sale Guarantee</h2>
-          </div>
-          <div class="legal-card-body">
-            <p>
-              We implement comprehensive technical and organizational safeguards to protect your personal information against unauthorized disclosure, interception, or destruction:
-            </p>
-            <ul class="legal-highlight-list">
-              <li><strong>End-to-End Transport Encryption:</strong> All communications between your browser and <code>kabeerahmed1.netlify.app</code> are encrypted using modern 256-bit SSL/TLS protocol certificates.</li>
-              <li><strong>Zero-Sale Policy:</strong> We explicitly guarantee that <strong>Kabeer Tech Hub does not sell, lease, rent, or trade your personal or business data</strong> to third-party data brokers, advertising aggregators, or external companies under any circumstances.</li>
-              <li><strong>Retention Schedules:</strong> Inactive consultation inquiries and form submissions are routinely audited and pruned from active notification logs once project discussions conclude.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- 06. User Rights -->
-        <section class="legal-card" id="sec-rights">
-          <div class="legal-card-header">
-            <span class="legal-card-num">06</span>
-            <h2 class="legal-card-title">User Rights &amp; Privacy Controls</h2>
-          </div>
-          <div class="legal-card-body">
-            <p>
-              Regardless of your geographic location, we respect your rights to control your personal data in accordance with international best practices and applicable laws:
-            </p>
-            <ul class="legal-highlight-list">
-              <li><strong>Right of Access &amp; Portability:</strong> You may request a confirmation and copy of any personal contact data we hold concerning your inquiries.</li>
-              <li><strong>Right to Erasure ("Right to be Forgotten"):</strong> You have the right to request the immediate deletion and scrubbing of your contact history from our messaging records.</li>
-              <li><strong>Right to Rectification:</strong> If your submitted email or project contact details change, you may request an immediate update.</li>
-              <li><strong>Cookie &amp; Tracking Opt-Out:</strong> You can configure your browser to reject cookies or utilize privacy extensions (such as Google Analytics Opt-Out Browser Add-on) to prevent tracking telemetry.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- 07. Contact Information -->
-        <section class="legal-card" id="sec-contact">
-          <div class="legal-card-header">
-            <span class="legal-card-num">07</span>
-            <h2 class="legal-card-title">Contact Information &amp; Legal Inquiries</h2>
-          </div>
-          <div class="legal-card-body">
-            <p>
-              If you have any questions, deletion requests, or compliance inquiries regarding this Privacy Policy, please contact Abdul Kabeer directly through the official communication channels:
-            </p>
-            
-            <div class="legal-sub-grid">
-              <div class="legal-sub-card">
-                <h3 class="legal-sub-title">Direct Privacy Email</h3>
-                <p>
-                  <a href="mailto:contact@kabeerai.tech" class="legal-link" style="color: var(--gold-champagne); font-weight: 600;">contact@kabeerai.tech</a><br>
-                  <span style="font-size: 0.8rem; color: var(--text-muted);">Alternate: kb57goodplayer@gmail.com</span>
-                </p>
-              </div>
-
-              <div class="legal-sub-card">
-                <h3 class="legal-sub-title">Headquarters &amp; Jurisdiction</h3>
-                <p>
-                  <strong>Kabeer Tech Hub</strong><br>
-                  Karachi, Sindh, Pakistan<br>
-                  <span style="font-size: 0.8rem; color: var(--text-muted);">Governed under Pakistan laws and international consumer best practices.</span>
-                </p>
-              </div>
-            </div>
-
-            <a href="/#contact" class="legal-contact-btn">
-              <span>Open Consultation Inquiry</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </section>
-
-      </div>
     </div>
   </main>
 
@@ -373,7 +478,7 @@
           &copy; 2026 Kabeer Tech Hub. All rights reserved.
         </p>
         <div class="footer-legal-links">
-          <a href="/privacy-policy" class="legal-link" style="color: #ffffff; text-decoration: underline; text-underline-offset: 4px;">Privacy Policy</a>
+          <a href="/privacy-policy" class="legal-link text-white underline underline-offset-4 font-bold">Privacy Policy</a>
           <span class="legal-divider" aria-hidden="true">•</span>
           <a href="/terms-and-conditions" class="legal-link">Terms &amp; Conditions</a>
         </div>
