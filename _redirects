@@ -1,0 +1,3 @@
+# Netlify Redirects for Clean URLs and Routing
+/privacy-policy        /privacy-policy.html        200
+/terms-and-conditions  /terms-and-conditions.html  200

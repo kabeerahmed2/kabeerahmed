@@ -33,7 +33,18 @@ const server = http.createServer((req, res) => {
   let reqPath = req.url.split('?')[0];
   if (reqPath === '/') reqPath = '/index.html';
 
-  const filePath = path.join(__dirname, reqPath);
+  let filePath = path.join(__dirname, reqPath);
+
+  // Clean URLs support: check for .html or directory index.html
+  if (!fs.existsSync(filePath)) {
+    if (fs.existsSync(filePath + '.html')) {
+      filePath = filePath + '.html';
+    } else if (fs.existsSync(path.join(filePath, 'index.html'))) {
+      filePath = path.join(filePath, 'index.html');
+    }
+  } else if (fs.statSync(filePath).isDirectory() && fs.existsSync(path.join(filePath, 'index.html'))) {
+    filePath = path.join(filePath, 'index.html');
+  }
 
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
