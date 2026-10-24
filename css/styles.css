@@ -1987,9 +1987,11 @@ h1, h2, h3, h4 {
   gap: 14px;
 }
 
-.footer-monogram {
+.footer-monogram,
+.footer-logo-img {
   width: 44px;
   height: 44px;
+  object-fit: cover;
   background: rgba(214, 180, 119, 0.1);
   border: 1px solid var(--gold-champagne);
   border-radius: 12px;
@@ -2000,6 +2002,7 @@ h1, h2, h3, h4 {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--gold-champagne);
+  box-shadow: 0 0 15px rgba(214, 180, 119, 0.2);
 }
 
 .footer-brand-title {
