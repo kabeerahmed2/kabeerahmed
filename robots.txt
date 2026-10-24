@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /favicon.ico
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /assets/
+Allow: /favicon.ico
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.ico$
+
+Sitemap: https://kabeerahmed1.netlify.app/sitemap.xml
