@@ -309,17 +309,25 @@
     }
   }
 
+  function safeRun(fn, name) {
+    try {
+      fn();
+    } catch (e) {
+      console.warn('Hydration notice (' + name + '):', e);
+    }
+  }
+
   // Master Hydration Coordinator
   function hydrate(content) {
     if (!content) return;
-    if (content.projects) renderProjects(content.projects);
-    if (content.education) renderEducation(content.education);
-    if (content.experience) renderExperience(content.experience);
-    if (content.skills) renderSkills(content.skills);
-    if (content.hero) renderHero(content.hero);
-    if (content.about) renderAbout(content.about);
-    if (content.startup) renderStartup(content.startup);
-    if (content.contact) renderContact(content.contact);
+    if (content.projects) safeRun(() => renderProjects(content.projects), 'projects');
+    if (content.education) safeRun(() => renderEducation(content.education), 'education');
+    if (content.experience) safeRun(() => renderExperience(content.experience), 'experience');
+    if (content.skills) safeRun(() => renderSkills(content.skills), 'skills');
+    if (content.hero) safeRun(() => renderHero(content.hero), 'hero');
+    if (content.about) safeRun(() => renderAbout(content.about), 'about');
+    if (content.startup) safeRun(() => renderStartup(content.startup), 'startup');
+    if (content.contact) safeRun(() => renderContact(content.contact), 'contact');
 
     // Re-initialize interactive elements from app.js if loaded
     if (typeof window.initProjectFilters === 'function') window.initProjectFilters();

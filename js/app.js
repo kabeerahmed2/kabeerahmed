@@ -143,22 +143,34 @@ function initNavigation() {
 function initScrollReveal() {
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
 
+  if (!('IntersectionObserver' in window)) {
+    revealElements.forEach(el => el.classList.add('revealed'));
+    return;
+  }
+
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('revealed');
-        // Unobserve once revealed for performance
         observer.unobserve(entry.target);
       }
     });
   }, {
     root: null,
-    rootMargin: '0px 0px -60px 0px',
-    threshold: 0.1
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.05
   });
 
-  revealElements.forEach(el => revealObserver.observe(el));
+  revealElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('revealed');
+    } else {
+      revealObserver.observe(el);
+    }
+  });
 }
+window.initScrollReveal = initScrollReveal;
 
 /* --------------------------------------------------------------------------
    5. Project Portfolio Filtering (with Event Delegation for Dynamic Content)
@@ -271,32 +283,6 @@ function initVideoModal() {
     if (e.target === modal) {
       closeModal();
     }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('open')) {
-      closeModal();
-    }
-  });
-}
-    }
-  }
-
-  openButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const mediaSrc = btn.getAttribute('data-video');
-      const title = btn.getAttribute('data-title') || 'Project Walkthrough';
-      if (mediaSrc) openModal(mediaSrc, title);
-    });
-  });
-
-  if (modalClose) {
-    modalClose.addEventListener('click', closeModal);
-  }
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
   });
 
   document.addEventListener('keydown', (e) => {
