@@ -161,43 +161,46 @@ function initScrollReveal() {
 }
 
 /* --------------------------------------------------------------------------
-   5. Project Portfolio Filtering
+   5. Project Portfolio Filtering (with Event Delegation for Dynamic Content)
    -------------------------------------------------------------------------- */
 function initProjectFilters() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  if (window._projectFiltersInitialized) return;
+  window._projectFiltersInitialized = true;
 
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
 
-      // Active state on buttons
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
 
-      // Filter projects
-      projectCards.forEach(card => {
-        const category = card.getAttribute('data-category') || '';
-        if (filter === 'all' || category.includes(filter)) {
-          card.style.display = 'flex';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 20);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(12px)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 250);
-        }
-      });
+    // Active state on buttons
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Filter projects
+    projectCards.forEach(card => {
+      const category = card.getAttribute('data-category') || '';
+      if (filter === 'all' || category.includes(filter)) {
+        card.style.display = 'flex';
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 20);
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(12px)';
+        setTimeout(() => {
+          card.style.display = 'none';
+        }, 250);
+      }
     });
   });
 }
 
 /* --------------------------------------------------------------------------
-   6. Video Walkthrough Modal (For Projects)
+   6. Video Walkthrough Modal (For Projects - with Delegation)
    -------------------------------------------------------------------------- */
 function initVideoModal() {
   const modal = document.getElementById('video-modal');
@@ -205,9 +208,9 @@ function initVideoModal() {
   const modalImage = document.getElementById('modal-image-viewer');
   const modalTitle = document.getElementById('modal-title');
   const modalClose = document.getElementById('modal-close');
-  const openButtons = document.querySelectorAll('.open-video-modal');
 
-  if (!modal) return;
+  if (!modal || window._videoModalInitialized) return;
+  window._videoModalInitialized = true;
 
   function openModal(mediaSrc, title) {
     if (modalTitle) modalTitle.textContent = title;
@@ -248,6 +251,34 @@ function initVideoModal() {
     }
     if (modalImage) {
       modalImage.src = '';
+    }
+  }
+
+  // Delegated click listener for dynamic cards
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.open-video-modal');
+    if (!btn) return;
+    const mediaSrc = btn.getAttribute('data-video');
+    const title = btn.getAttribute('data-title') || 'Project Walkthrough';
+    if (mediaSrc) openModal(mediaSrc, title);
+  });
+
+  if (modalClose) {
+    modalClose.addEventListener('click', closeModal);
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+}
     }
   }
 
@@ -424,25 +455,37 @@ function initParallaxLight() {
 }
 
 /* --------------------------------------------------------------------------
-   9. Hover Video & Walkthrough Playback Interaction
+   9. Hover Video & Walkthrough Playback Interaction (with Delegation)
    -------------------------------------------------------------------------- */
 function initProjectHoverVideo() {
-  const cards = document.querySelectorAll('.project-card');
-  cards.forEach(card => {
+  if (window._hoverVideoInitialized) return;
+  window._hoverVideoInitialized = true;
+
+  document.addEventListener('mouseover', (e) => {
+    const card = e.target.closest('.project-card');
+    if (!card) return;
+    const video = card.querySelector('.card-hover-video');
+    if (!video || video.dataset.playing === 'true') return;
+
+    video.dataset.playing = 'true';
+    video.currentTime = 0;
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {});
+    }
+  });
+
+  document.addEventListener('mouseout', (e) => {
+    const card = e.target.closest('.project-card');
+    if (!card) return;
+    // Check if mouse left the card entirely
+    const related = e.relatedTarget;
+    if (related && card.contains(related)) return;
+
     const video = card.querySelector('.card-hover-video');
     if (!video) return;
-
-    card.addEventListener('mouseenter', () => {
-      video.currentTime = 0;
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {});
-      }
-    });
-
-    card.addEventListener('mouseleave', () => {
-      video.pause();
-    });
+    video.dataset.playing = 'false';
+    video.pause();
   });
 }
 

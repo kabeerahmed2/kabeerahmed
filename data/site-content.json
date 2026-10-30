@@ -1,0 +1,328 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-10-30T18:15:00.000Z",
+  "hero": {
+    "status": "Available for AI & Automation Projects",
+    "eyebrow": ["SOFTWARE ENGINEERING", "AI", "AUTOMATION"],
+    "heading": {
+      "line1": "I Build <span class=\"text-gold-gradient\">Intelligent</span>",
+      "line2": "Digital Experiences",
+      "line3": "That Create <span class=\"text-gold-gradient\">Impact.</span>"
+    },
+    "description": "I’m <strong>Kabeer Ahmed</strong> — a Software Engineering student, AI Automation & Prompt Engineer, and Web Developer. I build AI-powered workflows, web applications, SaaS concepts, and creative digital experiences that transform ideas into practical systems.",
+    "primaryCta": { "text": "Explore My Work", "link": "#projects" },
+    "secondaryCta": { "text": "Let’s Work Together", "link": "#contact" },
+    "metrics": [
+      { "number": "Iqra University", "label": "BS Software Engineering" },
+      { "number": "n8n & LangGraph", "label": "AI Agent Architecture" },
+      { "number": "Kabeer Tech Hub", "label": "Founder & Initiative" }
+    ],
+    "chips": [
+      { "icon": "🤖", "label": "AI Automation" },
+      { "icon": "⚡", "label": "AI Agents" },
+      { "icon": "🌐", "label": "Web Applications" },
+      { "icon": "🔌", "label": "API Integrations" },
+      { "icon": "🧠", "label": "Prompt Engineering" },
+      { "icon": "🚀", "label": "SaaS Systems" }
+    ]
+  },
+  "about": {
+    "tag": "PHILOSOPHY & FOCUS",
+    "title": "Beyond the Code.",
+    "subtitle": "I’m a Software Engineering student with a strong interest in AI, automation, web development, and emerging technologies. I enjoy turning complex ideas into useful digital products, intelligent workflows, and practical solutions.",
+    "pillars": [
+      {
+        "number": "01",
+        "title": "Engineering Mindset",
+        "description": "Problem-solving, structured thinking, and software fundamentals. Applying algorithms, modular architecture, and system reliability to build maintainable, scalable digital products.",
+        "meta": "Software Principles • OOP & Clean Code"
+      },
+      {
+        "number": "02",
+        "title": "AI & Automation",
+        "highlight": true,
+        "description": "Intelligent workflows, prompt engineering, API integrations, and AI-assisted systems. Designing multi-step autonomous pipelines with n8n, LangGraph, and CrewAI that eliminate manual friction.",
+        "meta": "Autonomous Agents • API Orchestration"
+      },
+      {
+        "number": "03",
+        "title": "Creative Technology",
+        "description": "Web experiences, digital products, AI-generated content, and visual storytelling. Bridging technical implementation with refined aesthetics, typography, and human-centric design.",
+        "meta": "Interactive UI • Digital Products"
+      }
+    ],
+    "credentials": [
+      "✦ Google Cloud Prompt Design in Vertex AI",
+      "✦ DeepLearning.AI “AI For Everyone”",
+      "✦ MongoDB University Document Model (SQL to NoSQL)"
+    ]
+  },
+  "education": [
+    {
+      "id": "edu-1",
+      "title": "Bachelor of Science — Computer Software Engineering",
+      "institution": "Iqra University (Official)",
+      "period": "AUGUST 2024 — PRESENT",
+      "isCurrent": true,
+      "location": "Karachi, Pakistan",
+      "description": "Pursuing rigorous software engineering degree focusing on software construction, algorithm design, data structures, object-oriented methodologies, relational & document databases, and scalable web engineering.",
+      "tags": ["Software Architecture", "Data Structures", "Database Systems", "Algorithms"]
+    },
+    {
+      "id": "edu-2",
+      "title": "Intermediate in Computer Science (ICS)",
+      "institution": "Islamia Government Science College",
+      "period": "JULY 2022 — SEPTEMBER 2024",
+      "isCurrent": false,
+      "location": "Karachi, Pakistan",
+      "description": "Core studies in computational mathematics, programming logic, physics, and computer fundamentals providing the quantitative backbone for engineering.",
+      "tags": ["Computer Science", "Mathematics", "Physics"]
+    },
+    {
+      "id": "edu-3",
+      "title": "Matriculation (Science)",
+      "institution": "New Falcon School • Board of Secondary Education, Karachi",
+      "period": "2020 — 2022",
+      "isCurrent": false,
+      "location": "Karachi, Pakistan",
+      "description": "Secondary school education with core emphasis on mathematics, science, and analytical reasoning.",
+      "tags": ["Science", "Mathematics", "Analytical Reasoning"]
+    },
+    {
+      "id": "edu-4",
+      "title": "Diploma of Education — Graphic Design",
+      "institution": "Power Print",
+      "period": "FEBRUARY 2018 — OCTOBER 2020",
+      "isCurrent": false,
+      "location": "Karachi, Pakistan",
+      "description": "Professional training in digital visual communication, document layout, typography, and creative design software (Photoshop, typography systems).",
+      "tags": ["Graphic Design", "Branding", "Visual Layout"]
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-1",
+      "role": "AI Automation & Prompt Engineer",
+      "org": "Freelance",
+      "badge": "FREELANCE • ACTIVE",
+      "period": "2025 — Present",
+      "highlight": true,
+      "summary": "AI Automation Developer passionate about building intelligent workflows with n8n, AI agents, and API integrations. Focused on automating processes and creating scalable digital solutions.",
+      "points": [
+        "Building intelligent autonomous workflows with n8n, AI agents, and custom API integrations.",
+        "Automating business processes, lead capture pipelines, and scalable digital solutions.",
+        "Implementing contextual prompt design and structured data pipelines for business efficiency."
+      ],
+      "tags": ["n8n", "AI Agents", "API Integrations", "Prompt Engineering", "Workflow Automation"]
+    },
+    {
+      "id": "exp-2",
+      "role": "Social Media & Operations Coordinator",
+      "org": "SARA BY AMNA",
+      "badge": "E-COMMERCE & DIGITAL OPERATIONS",
+      "period": "2025",
+      "highlight": false,
+      "summary": "Managing brand presence, consumer engagement, and digital fulfillment operations across e-commerce channels.",
+      "points": [
+        "Managing social media platforms, including content posting, customer interaction, and brand engagement.",
+        "Handling online orders and coordinating order processing through e-commerce tools and online platforms.",
+        "Tracking fulfillment metrics and ensuring high customer satisfaction standards."
+      ],
+      "tags": ["E-Commerce Platforms", "Social Media Management", "Order Processing", "Customer Interaction"]
+    },
+    {
+      "id": "exp-3",
+      "role": "Documentation & Design Specialist",
+      "org": "Kabeer Tech Hub",
+      "badge": "STARTUP INITIATIVE",
+      "period": "2022 — 2025",
+      "highlight": false,
+      "summary": "Documentation & IT Specialist with 3+ years of experience in graphic design, document management, digital services, and customer support.",
+      "points": [
+        "Created professional graphic design, branding collateral, posters, layouts, and typography systems.",
+        "Established structured document management, CV preparation, and digital typing workflows.",
+        "Provided comprehensive IT assistance, customer support, and digital service coordination."
+      ],
+      "tags": ["Technical Documentation", "Graphic Design", "Digital Services", "Customer Support"]
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill-1",
+      "icon": "⚡",
+      "category": "AI & Automation",
+      "description": "Intelligent workflow orchestration, multi-agent pipelines, and asynchronous triggers.",
+      "items": ["n8n Orchestration", "LangGraph", "CrewAI", "Autonomous AI Agents", "Custom Webhooks", "Zapier", "API Integrations"]
+    },
+    {
+      "id": "skill-2",
+      "icon": "💻",
+      "category": "Software Engineering",
+      "description": "Structured programming, algorithms, architectural patterns, and clean code.",
+      "items": ["Python", "JavaScript (ES6+)", "Object-Oriented (OOP)", "Data Structures", "Algorithm Design", "Git / GitHub", "RESTful Architecture"]
+    },
+    {
+      "id": "skill-3",
+      "icon": "🌐",
+      "category": "Web Development",
+      "description": "Modern responsive applications, component architectures, and performant styling.",
+      "items": ["React 18", "HTML5 Semantic", "CSS3 & Glassmorphism", "Node.js", "Express.js", "Vite", "Responsive Design"]
+    },
+    {
+      "id": "skill-4",
+      "icon": "🎯",
+      "category": "Prompt Engineering",
+      "description": "Context modeling, system instruction design, structured JSON outputs, and evaluation.",
+      "items": ["Google Vertex AI", "Claude", "ChatGPT", "Context Window Design", "Structured Output JSON", "Few-Shot Prompting", "Prompt Testing"]
+    },
+    {
+      "id": "skill-5",
+      "icon": "🎨",
+      "category": "Creative AI & Design",
+      "description": "Generative visual production, product concepts, visual assets, and UI layout.",
+      "items": ["AI Visual Generation", "Figma UI/UX", "Adobe Photoshop", "Video Production Flow", "Brand Identity", "Visual Storytelling"]
+    },
+    {
+      "id": "skill-6",
+      "icon": "🗄️",
+      "category": "Business Systems & DB",
+      "description": "Data synchronization, document databases, CRM workflows, and notification pipelines.",
+      "items": ["Supabase", "Firebase Auth & Store", "MongoDB (NoSQL)", "SQL Relational", "CRM Automations", "Auto-Mailers (OAuth)"]
+    }
+  ],
+  "startup": {
+    "eyebrow": "MY INITIATIVE",
+    "name": "Kabeer Tech Hub",
+    "tagline": "All In One Solution Hub",
+    "description": "<strong>Kabeer Tech Hub</strong> is my technology and digital solutions initiative, focused on exploring AI-powered workflows, web applications, SaaS concepts, and creative digital solutions for businesses and creators.",
+    "quote": "“Built around one idea: making technology practical, useful, and accessible.”",
+    "metaTags": ["AI", "AUTOMATION", "WEB", "DIGITAL SOLUTIONS"],
+    "services": [
+      { "id": "1", "title": "AI & Automation" },
+      { "id": "2", "title": "Web Development" },
+      { "id": "3", "title": "Digital Products" },
+      { "id": "4", "title": "Creative AI" }
+    ]
+  },
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "FixHub — AI Service Matcher",
+      "category": "web-apps ai-automation",
+      "categoryTag": "AI & WEB APP",
+      "badge": "PROTOTYPE",
+      "thumbnail": "assets/fixhub_thumb.jpg",
+      "video": "assets/fixhub_demo.mp4",
+      "hasHoverVideo": true,
+      "description": "AI-driven home service matching with Urdu/English voice input, Gemini diagnosis, interactive map tracking, and appointment scheduling.",
+      "stack": ["React", "Gemini", "MapTiler", "Google Hackathon 2026"],
+      "liveUrl": "https://fixhub12.netlify.app",
+      "walkthroughTitle": "FixHub Platform Walkthrough",
+      "verifiedBadge": ""
+    },
+    {
+      "id": "proj-2",
+      "title": "Trade Hub — Global B2B Export Hub",
+      "category": "web-apps creative-systems",
+      "categoryTag": "GLOBAL B2B TRADE",
+      "badge": "PROTOTYPE",
+      "thumbnail": "assets/tradehub_thumb.jpg",
+      "video": "assets/tradehub_demo.mp4",
+      "hasHoverVideo": true,
+      "description": "Connecting small manufacturers from factory floor to foreign port with verified export experts, category inspections, document clearance, and hassle-free IEC registration.",
+      "stack": ["B2B Platform", "Global Trade", "MeDo App", "Export Engine"],
+      "liveUrl": "https://app-c7wolf4tvmdd.appmedo.com",
+      "walkthroughTitle": "Trade Hub Platform Demo",
+      "verifiedBadge": ""
+    },
+    {
+      "id": "proj-3",
+      "title": "FocusBuddy — Behavioral Intervention System",
+      "category": "ai-automation creative-systems web-apps",
+      "categoryTag": "BEHAVIORAL AI",
+      "badge": "PROTOTYPE",
+      "thumbnail": "assets/focusbuddy_thumb.png",
+      "video": "assets/focusbuddy_thumb.png",
+      "hasHoverVideo": false,
+      "description": "AI-powered behavioral intervention system engineered to beat procrastination before it steals time. Features predictive habit risk analysis, personalized nudges, and smart task interventions.",
+      "stack": ["Behavioral AI", "Predictive Nudges", "Smart Reminders", "MeDo"],
+      "liveUrl": "https://medo.dev/projects/app-boe2cviqq8ld/preview",
+      "walkthroughTitle": "FocusBuddy Architecture & UI Walkthrough",
+      "verifiedBadge": ""
+    },
+    {
+      "id": "proj-4",
+      "title": "Social Media Content Workflow",
+      "category": "ai-automation creative-systems",
+      "categoryTag": "AUTONOMOUS WORKFLOW",
+      "badge": "",
+      "thumbnail": "assets/socialmedia_thumb.png",
+      "video": "assets/socialmedia_thumb.png",
+      "hasHoverVideo": false,
+      "description": "Agentic system combining n8n, Claude, and LangGraph to research industry trends, generate structured editorial drafts, and schedule automated multi-platform publication.",
+      "stack": ["n8n", "LangGraph", "Claude", "Webhooks"],
+      "liveUrl": "",
+      "walkthroughTitle": "Social Media Content Workflow Diagram",
+      "verifiedBadge": "✦ Verified Client Workflow"
+    },
+    {
+      "id": "proj-5",
+      "title": "WhatsApp Automation — AI Support Agent",
+      "category": "ai-automation",
+      "categoryTag": "CONVERSATIONAL AI",
+      "badge": "",
+      "thumbnail": "assets/whatsapp_thumb.png",
+      "video": "assets/whatsapp_demo.mp4",
+      "hasHoverVideo": true,
+      "description": "Customer query triage and support agent utilizing prompt-engineered context memory, intent classification, and instant ticket escalation over WhatsApp API.",
+      "stack": ["WhatsApp API", "Prompt Design", "n8n", "JSON"],
+      "liveUrl": "",
+      "walkthroughTitle": "WhatsApp Automation Platform Walkthrough",
+      "verifiedBadge": "✦ 24/7 Automated Triage"
+    },
+    {
+      "id": "proj-6",
+      "title": "Data Fetch Sales Pipeline",
+      "category": "ai-automation",
+      "categoryTag": "DATA INTEGRATION",
+      "badge": "",
+      "thumbnail": "assets/salespipeline_thumb.png",
+      "video": "assets/salespipeline_thumb.png",
+      "hasHoverVideo": false,
+      "description": "Event-driven synchronization engine connecting multi-channel data scrapers, CRM databases, automated data scrubbing, and lead qualification pipelines.",
+      "stack": ["Data Fetch", "n8n Flow", "CRM API", "Webhooks"],
+      "liveUrl": "",
+      "walkthroughTitle": "Data Fetch Sales Pipeline Architecture",
+      "verifiedBadge": "✦ Automated Pipeline"
+    },
+    {
+      "id": "proj-7",
+      "title": "Email Automation & Lead Dispatch",
+      "category": "ai-automation",
+      "categoryTag": "BUSINESS WORKFLOW",
+      "badge": "",
+      "thumbnail": "assets/gmail_thumb.png",
+      "video": "assets/gmail_thumb.png",
+      "hasHoverVideo": false,
+      "description": "Inbound email triage and qualification engine triggering personalized AI response drafts, Gmail API synchronization, and automated CRM tracking.",
+      "stack": ["OAuth2", "Gmail API", "n8n Automation", "Data Scrubbing"],
+      "liveUrl": "",
+      "walkthroughTitle": "Gmail Automation Pipeline Diagram",
+      "verifiedBadge": "✦ Operational Pipeline"
+    }
+  ],
+  "contact": {
+    "headline": "Have an Idea?<br>Let’s Turn It Into <span class=\"text-gold-gradient\">Something Useful.</span>",
+    "subtext": "From intelligent workflows to web applications and creative digital solutions, I'm interested in building practical systems that solve real problems.",
+    "whatsapp": "+92 3126098241",
+    "whatsappUrl": "https://wa.me/923126098241",
+    "email": "kb57goodplayer@gmail.com",
+    "socials": [
+      { "platform": "LinkedIn", "url": "https://www.linkedin.com/in/kabeer-ahmed-275b7b20b" },
+      { "platform": "WhatsApp", "url": "https://wa.me/923126098241" },
+      { "platform": "Fiverr", "url": "https://www.fiverr.com/s/xrrwRwa" },
+      { "platform": "GitHub", "url": "https://github.com/kabeerahmed2" },
+      { "platform": "Email", "url": "mailto:kb57goodplayer@gmail.com" }
+    ]
+  }
+}

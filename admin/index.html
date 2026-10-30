@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KTH Admin CMS — Content Management System</title>
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0A0908;
+      --bg-panel: rgba(18, 17, 15, 0.85);
+      --bg-panel-subtle: rgba(26, 23, 19, 0.7);
+      --border-gold: rgba(214, 180, 119, 0.28);
+      --border-gold-bright: #E6B96D;
+      --gold-primary: #D6B477;
+      --gold-light: #F5D38E;
+      --text-main: #FBF9F5;
+      --text-muted: #9E9B93;
+      --text-dim: #6E6B65;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --danger: #ef4444;
+      --success: #22c55e;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-head: 'Manrope', sans-serif;
+      --font-mono: 'Space Grotesk', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(214, 180, 119, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(230, 185, 109, 0.05) 0%, transparent 45%);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Scrollbars */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-dark); }
+    ::-webkit-scrollbar-thumb { background: rgba(214, 180, 119, 0.25); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(214, 180, 119, 0.5); }
+
+    /* Login Gate Container */
+    #login-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--bg-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background-image: radial-gradient(circle at center, rgba(214, 180, 119, 0.12) 0%, transparent 70%);
+    }
+
+    .login-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(214, 180, 119, 0.2);
+      backdrop-filter: blur(20px);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    .login-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 1.5px solid var(--border-gold-bright);
+      box-shadow: 0 0 20px rgba(230, 185, 109, 0.35);
+    }
+
+    .login-title {
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .login-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 24px;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.2s ease;
+      margin-bottom: 16px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    .login-form input:focus {
+      border-color: var(--border-gold-bright);
+      box-shadow: 0 0 16px rgba(230, 185, 109, 0.3);
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #F5D38E, #D6B477);
+      color: #12100C;
+      font-weight: 700;
+      font-family: var(--font-head);
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(214, 180, 119, 0.4);
+    }
+
+    .login-error {
+      color: var(--danger);
+      font-size: 0.85rem;
+      margin-top: 12px;
+      display: none;
+    }
+
+    /* Main Dashboard Layout */
+    #admin-app {
+      display: none;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Top Navbar */
+    .admin-navbar {
+      background: rgba(18, 17, 15, 0.92);
+      border-bottom: 1px solid var(--border-gold);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .nav-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border-gold-bright);
+    }
+
+    .nav-titles h1 {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-badge {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      background: rgba(230, 185, 109, 0.15);
+      color: var(--gold-light);
+      border: 1px solid var(--border-gold);
+      padding: 2px 7px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .nav-titles p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-head);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #F5D38E, #D6B477);
+      color: #12100C;
+    }
+    .btn-gold:hover {
+      box-shadow: 0 0 16px rgba(230, 185, 109, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--border-gold);
+    }
+
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.15);
+      border-color: rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+    }
+    .btn-danger:hover {
+      background: rgba(239, 68, 68, 0.25);
+    }
+
+    .btn-sm {
+      padding: 5px 10px;
+      font-size: 0.78rem;
+    }
+
+    /* Subheader Navigation Tabs */
+    .admin-tabs-bar {
+      background: rgba(14, 13, 11, 0.85);
+      border-bottom: 1px solid rgba(214, 180, 119, 0.15);
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--font-head);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 14px 18px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover {
+      color: #fff;
+    }
+
+    .tab-btn.active {
+      color: var(--border-gold-bright);
+      border-bottom-color: var(--border-gold-bright);
+      background: rgba(230, 185, 109, 0.04);
+    }
+
+    .tab-count {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1px 6px;
+      border-radius: 10px;
+    }
+
+    /* Main Content Area */
+    .admin-main {
+      flex: 1;
+      padding: 32px 28px 60px;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Section Headers inside tabs */
+    .tab-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .tab-header-titles h2 {
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .tab-header-titles p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-top: 4px;
+    }
+
+    /* Cards Grid */
+    .grid-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 20px;
+    }
+
+    .admin-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+
+    .admin-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      border-color: rgba(230, 185, 109, 0.45);
+    }
+
+    .admin-card-media {
+      height: 180px;
+      width: 100%;
+      background: #000;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .admin-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .admin-card-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid var(--border-gold);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      font-family: var(--font-mono);
+    }
+
+    .admin-card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .admin-card-title {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .admin-card-desc {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .admin-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .tag-pill {
+      font-size: 0.72rem;
+      background: rgba(214, 180, 119, 0.1);
+      border: 1px solid rgba(214, 180, 119, 0.25);
+      color: var(--gold-light);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+    }
+
+    .admin-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 14px;
+      margin-top: auto;
+    }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Forms & Modals */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #141311;
+      border: 1px solid var(--border-gold-bright);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.9), 0 0 30px rgba(214, 180, 119, 0.25);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 680px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 32px;
+      animation: modalSlide 0.3s ease;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 16px;
+    }
+
+    .modal-header h3 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .modal-close-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .modal-close-btn:hover { color: #fff; }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+      font-family: var(--font-head);
+      letter-spacing: 0.02em;
+    }
+
+    .form-control {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(214, 180, 119, 0.3);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: var(--border-gold-bright);
+      box-shadow: 0 0 10px rgba(230, 185, 109, 0.25);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .form-help {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    .modal-footer {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 18px;
+    }
+
+    /* General Content Sections Box */
+    .settings-panel {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .settings-title {
+      font-family: var(--font-head);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .settings-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    /* Toast Notification */
+    #kth-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #181612;
+      border: 1px solid var(--border-gold-bright);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px rgba(230, 185, 109, 0.3);
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      display: none;
+      align-items: center;
+      gap: 12px;
+      z-index: 99999;
+      font-family: var(--font-head);
+      font-size: 0.9rem;
+      animation: toastIn 0.3s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes modalSlide {
+      from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .admin-navbar { padding: 12px 16px; flex-wrap: wrap; }
+      .admin-tabs-bar { padding: 0 12px; }
+      .admin-main { padding: 20px 16px 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      .grid-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       1. SECURITY & AUTHENTICATION GATE
+       ============================================================ -->
+  <div id="login-gate">
+    <div class="login-card">
+      <img src="assets/kth_logo_circle.png" alt="Kabeer Tech Hub" class="login-logo">
+      <h2 class="login-title">KTH Admin Portal</h2>
+      <p class="login-desc">Enter your administrator master passcode to manage site content, projects, education, and workflows.</p>
+      
+      <form class="login-form" id="login-form">
+        <input type="password" id="passcode-input" placeholder="••••••••••••" autofocus autocomplete="current-password" required>
+        <button type="submit" class="login-btn" id="login-submit-btn">Unlock Admin Dashboard</button>
+      </form>
+      <p class="login-error" id="login-error">Incorrect passcode. Please try again.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       2. ADMIN DASHBOARD CONTAINER
+       ============================================================ -->
+  <div id="admin-app">
+    
+    <!-- Top Navigation Bar -->
+    <header class="admin-navbar">
+      <div class="nav-brand-wrap">
+        <img src="assets/kth_logo_circle.png" alt="KTH Logo" class="nav-logo">
+        <div class="nav-titles">
+          <h1>Kabeer Tech Hub <span class="nav-badge">ADMIN CMS</span></h1>
+          <p>Portfolio & Agency Dynamic Content Engine</p>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Live Preview Button -->
+        <button class="btn btn-glass" id="btn-preview-site" title="Test changes locally in browser before publishing">
+          <span>👁️ Preview on Site</span>
+        </button>
+
+        <!-- Publish to GitHub Button -->
+        <button class="btn btn-gold" id="btn-publish-github" title="Commit directly to GitHub repo and deploy to Netlify">
+          <span>🚀 Publish Live to Netlify</span>
+        </button>
+
+        <!-- Logout Button -->
+        <button class="btn btn-glass btn-sm" id="btn-logout" title="Exit admin session">
+          <span>🔒 Logout</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Subheader Tabs Navigation -->
+    <nav class="admin-tabs-bar" role="tablist">
+      <button class="tab-btn active" data-tab="tab-projects">
+        <span>🚀 Projects</span>
+        <span class="tab-count" id="count-projects">0</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-education">
+        <span>🎓 Education</span>
+        <span class="tab-count" id="count-education">0</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-experience">
+        <span>💼 Experience</span>
+        <span class="tab-count" id="count-experience">0</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-skills">
+        <span>⚡ Skills & Toolkit</span>
+        <span class="tab-count" id="count-skills">0</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-general">
+        <span>🌐 General Site Content</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-settings">
+        <span>⚙️ GitHub & Security</span>
+      </button>
+    </nav>
+
+    <!-- Main Tab Viewports -->
+    <main class="admin-main">
+
+      <!-- ========================================================
+           TAB 1: PROJECTS
+           ======================================================== -->
+      <section class="tab-content active" id="tab-projects">
+        <div class="tab-header">
+          <div class="tab-header-titles">
+            <h2>Projects Portfolio</h2>
+            <p>Add, edit, or delete portfolio projects, video walkthroughs, prototypes, and live site links.</p>
+          </div>
+          <button class="btn btn-gold" id="btn-add-project">
+            <span>+ Add New Project</span>
+          </button>
+        </div>
+
+        <div class="grid-list" id="projects-list-container">
+          <!-- Dynamic Project Cards Rendered via JS -->
+        </div>
+      </section>
+
+      <!-- ========================================================
+           TAB 2: EDUCATION
+           ======================================================== -->
+      <section class="tab-content" id="tab-education">
+        <div class="tab-header">
+          <div class="tab-header-titles">
+            <h2>Education Timeline</h2>
+            <p>Manage degree programs, colleges, dates, descriptions, and academic achievements.</p>
+          </div>
+          <button class="btn btn-gold" id="btn-add-education">
+            <span>+ Add Education Entry</span>
+          </button>
+        </div>
+
+        <div class="grid-list" id="education-list-container">
+          <!-- Dynamic Education Cards Rendered via JS -->
+        </div>
+      </section>
+
+      <!-- ========================================================
+           TAB 3: EXPERIENCE
+           ======================================================== -->
+      <section class="tab-content" id="tab-experience">
+        <div class="tab-header">
+          <div class="tab-header-titles">
+            <h2>Experience & Practical Work</h2>
+            <p>Manage roles, organizations, key responsibilities, bullet points, and tech stacks.</p>
+          </div>
+          <button class="btn btn-gold" id="btn-add-experience">
+            <span>+ Add Experience Entry</span>
+          </button>
+        </div>
+
+        <div class="grid-list" id="experience-list-container">
+          <!-- Dynamic Experience Cards Rendered via JS -->
+        </div>
+      </section>
+
+      <!-- ========================================================
+           TAB 4: SKILLS & TOOLKIT
+           ======================================================== -->
+      <section class="tab-content" id="tab-skills">
+        <div class="tab-header">
+          <div class="tab-header-titles">
+            <h2>Technical Toolkit & Skills</h2>
+            <p>Group competencies into engineering, AI, web, and creative domains.</p>
+          </div>
+          <button class="btn btn-gold" id="btn-add-skill-group">
+            <span>+ Add Skill Category</span>
+          </button>
+        </div>
+
+        <div class="grid-list" id="skills-list-container">
+          <!-- Dynamic Skill Group Cards Rendered via JS -->
+        </div>
+      </section>
+
+      <!-- ========================================================
+           TAB 5: GENERAL SITE CONTENT
+           ======================================================== -->
+      <section class="tab-content" id="tab-general">
+        <div class="tab-header">
+          <div class="tab-header-titles">
+            <h2>General Site Content</h2>
+            <p>Edit hero headlines, stats, bio, startup info, and direct contact details.</p>
+          </div>
+          <button class="btn btn-gold" id="btn-save-general">
+            <span>Save General Content</span>
+          </button>
+        </div>
+
+        <!-- Hero Settings -->
+        <div class="settings-panel">
+          <h3 class="settings-title">Hero Section</h3>
+          <p class="settings-desc">Top landing banner, value proposition, and quick stat metrics.</p>
+
+          <div class="form-group">
+            <label class="form-label">Availability Status Badge</label>
+            <input type="text" id="gen-hero-status" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Hero Bio / Main Description</label>
+            <textarea id="gen-hero-desc" class="form-control" rows="3"></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Metric 1 (Number / Name)</label>
+              <input type="text" id="gen-metric-1-num" class="form-control">
+              <input type="text" id="gen-metric-1-lbl" class="form-control" style="margin-top:6px;" placeholder="Label">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Metric 2 (Number / Tech)</label>
+              <input type="text" id="gen-metric-2-num" class="form-control">
+              <input type="text" id="gen-metric-2-lbl" class="form-control" style="margin-top:6px;" placeholder="Label">
+            </div>
+          </div>
+        </div>
+
+        <!-- About Settings -->
+        <div class="settings-panel">
+          <h3 class="settings-title">About Section</h3>
+          <p class="settings-desc">Philosophy, engineering principles, and verified credentials.</p>
+
+          <div class="form-group">
+            <label class="form-label">About Subtitle / Overview</label>
+            <textarea id="gen-about-subtitle" class="form-control" rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Verified Credentials (one per line)</label>
+            <textarea id="gen-about-creds" class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- Startup Settings -->
+        <div class="settings-panel">
+          <h3 class="settings-title">Kabeer Tech Hub (KTH) Section</h3>
+          <p class="settings-desc">Startup showcase, agency vision, and digital service pillars.</p>
+
+          <div class="form-group">
+            <label class="form-label">Startup Description</label>
+            <textarea id="gen-startup-desc" class="form-control" rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Startup Quote / Motto</label>
+            <input type="text" id="gen-startup-quote" class="form-control">
+          </div>
+        </div>
+
+        <!-- Contact & Channels Settings -->
+        <div class="settings-panel">
+          <h3 class="settings-title">Contact & Communication Channels</h3>
+          <p class="settings-desc">Direct communication channels linked in hero, contact form, and footer.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">WhatsApp Number</label>
+              <input type="text" id="gen-contact-wa" class="form-control" placeholder="+92 3126098241">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" id="gen-contact-email" class="form-control" placeholder="kb57goodplayer@gmail.com">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================
+           TAB 6: SETTINGS & GITHUB SYNC
+           ======================================================== -->
+      <section class="tab-content" id="tab-settings">
+        <div class="tab-header">
+          <div class="tab-header-titles">
+            <h2>GitHub Deployment & Security</h2>
+            <p>Configure automated GitHub commits for live Netlify deployment and customize master passcode.</p>
+          </div>
+        </div>
+
+        <!-- GitHub Integration -->
+        <div class="settings-panel">
+          <h3 class="settings-title">GitHub Auto-Publish Integration</h3>
+          <p class="settings-desc">When you click "🚀 Publish Live to Netlify", the CMS directly commits the updated <code>data/site-content.json</code> file to your repository via the GitHub REST API, instantly triggering Netlify's build and deployment (~30s).</p>
+
+          <div class="form-group">
+            <label class="form-label">GitHub Personal Access Token (PAT)</label>
+            <input type="password" id="gh-token-input" class="form-control" placeholder="ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+            <p class="form-help">Stored safely in your local browser only. Never exposed in public code.</p>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Repository</label>
+              <input type="text" id="gh-repo-input" class="form-control" value="kabeerahmed2/kabeerahmed" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Branch</label>
+              <input type="text" id="gh-branch-input" class="form-control" value="main" readonly>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; margin-top:14px;">
+            <button class="btn btn-gold btn-sm" id="btn-save-gh-token">Save GitHub Token</button>
+            <button class="btn btn-glass btn-sm" id="btn-test-gh">Test GitHub Connection</button>
+          </div>
+
+          <div id="gh-status-indicator" style="margin-top:14px; font-size:0.85rem; display:none;"></div>
+        </div>
+
+        <!-- Security / Passcode -->
+        <div class="settings-panel">
+          <h3 class="settings-title">Master Passcode</h3>
+          <p class="settings-desc">Update the passcode used to unlock this Admin panel.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">New Master Passcode</label>
+              <input type="password" id="new-passcode-input" class="form-control" placeholder="Enter new passcode">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Confirm New Passcode</label>
+              <input type="password" id="confirm-passcode-input" class="form-control" placeholder="Confirm new passcode">
+            </div>
+          </div>
+          <button class="btn btn-gold btn-sm" id="btn-change-passcode">Update Passcode</button>
+        </div>
+
+        <!-- JSON Backup & Restore -->
+        <div class="settings-panel">
+          <h3 class="settings-title">Data Backup & Restore</h3>
+          <p class="settings-desc">Export a copy of your site content JSON or restore from an existing backup file.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button class="btn btn-glass btn-sm" id="btn-export-json">💾 Download Backup (JSON)</button>
+            <label class="btn btn-glass btn-sm" style="cursor:pointer;">
+              📥 Restore from Backup
+              <input type="file" id="import-json-file" accept=".json" style="display:none;">
+            </label>
+            <button class="btn btn-danger btn-sm" id="btn-reset-defaults">↺ Reset to Original Defaults</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- ============================================================
+       3. MODALS: EDIT & ADD DRAWERS
+       ============================================================ -->
+  
+  <!-- Project Modal -->
+  <div class="modal-backdrop" id="modal-project">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-project-title">Add New Project</h3>
+        <button class="modal-close-btn" data-close="modal-project">&times;</button>
+      </div>
+      <form id="form-project">
+        <input type="hidden" id="proj-edit-id">
+
+        <div class="form-group">
+          <label class="form-label">Project Title *</label>
+          <input type="text" id="proj-title" class="form-control" placeholder="e.g. FixHub — AI Service Matcher" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Category Filter *</label>
+            <select id="proj-category" class="form-control" required>
+              <option value="ai-automation">AI & Automation</option>
+              <option value="web-apps">Web Applications</option>
+              <option value="creative-systems">Creative Systems</option>
+              <option value="web-apps ai-automation">Web Apps + AI Automation</option>
+              <option value="ai-automation creative-systems">AI + Creative Systems</option>
+              <option value="web-apps creative-systems">Web Apps + Creative Systems</option>
+              <option value="ai-automation creative-systems web-apps">All Categories</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Category Tag Text</label>
+            <input type="text" id="proj-categoryTag" class="form-control" placeholder="e.g. AI & WEB APP">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Badge Label (Optional)</label>
+            <input type="text" id="proj-badge" class="form-control" placeholder="e.g. PROTOTYPE">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Verified Sub-Badge (Optional)</label>
+            <input type="text" id="proj-verifiedBadge" class="form-control" placeholder="e.g. ✦ Verified Client Workflow">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Thumbnail Image URL or Path *</label>
+          <input type="text" id="proj-thumbnail" class="form-control" placeholder="e.g. assets/fixhub_thumb.jpg or https://..." required>
+          <div class="form-help">Available default assets: <code>assets/fixhub_thumb.jpg</code>, <code>assets/tradehub_thumb.jpg</code>, <code>assets/focusbuddy_thumb.png</code>, <code>assets/socialmedia_thumb.png</code>, <code>assets/whatsapp_thumb.png</code>, <code>assets/salespipeline_thumb.png</code>, <code>assets/gmail_thumb.png</code></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Walkthrough Video / Media URL</label>
+            <input type="text" id="proj-video" class="form-control" placeholder="e.g. assets/whatsapp_demo.mp4 or YouTube / video URL">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Walkthrough Modal Title</label>
+            <input type="text" id="proj-walkthroughTitle" class="form-control" placeholder="e.g. Platform Demo Walkthrough">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; cursor:pointer;">
+            <input type="checkbox" id="proj-hasHoverVideo">
+            <span>Enable Hover Video Preview (loops video on card mouseover)</span>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Live Site / Visit URL (Optional)</label>
+          <input type="url" id="proj-liveUrl" class="form-control" placeholder="https://...">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Summary Description *</label>
+          <textarea id="proj-description" class="form-control" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tech Stack Tags (Comma separated)</label>
+          <input type="text" id="proj-stack" class="form-control" placeholder="React, Gemini, MapTiler, Google Hackathon 2026">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-glass" data-close="modal-project">Cancel</button>
+          <button type="submit" class="btn btn-gold">Save Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Education Modal -->
+  <div class="modal-backdrop" id="modal-education">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-education-title">Add Education Entry</h3>
+        <button class="modal-close-btn" data-close="modal-education">&times;</button>
+      </div>
+      <form id="form-education">
+        <input type="hidden" id="edu-edit-id">
+
+        <div class="form-group">
+          <label class="form-label">Degree / Program Title *</label>
+          <input type="text" id="edu-title" class="form-control" placeholder="e.g. Bachelor of Science — Computer Software Engineering" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Institution Name *</label>
+          <input type="text" id="edu-institution" class="form-control" placeholder="e.g. Iqra University" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Timeline Period *</label>
+            <input type="text" id="edu-period" class="form-control" placeholder="e.g. AUGUST 2024 — PRESENT" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Location</label>
+            <input type="text" id="edu-location" class="form-control" placeholder="e.g. Karachi, Pakistan">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; cursor:pointer;">
+            <input type="checkbox" id="edu-isCurrent">
+            <span>Currently Active / Enrolled (displays golden badge & glow)</span>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Description *</label>
+          <textarea id="edu-description" class="form-control" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Coursework / Tag Pills (Comma separated)</label>
+          <input type="text" id="edu-tags" class="form-control" placeholder="Software Architecture, Data Structures, Algorithms">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-glass" data-close="modal-education">Cancel</button>
+          <button type="submit" class="btn btn-gold">Save Education</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Experience Modal -->
+  <div class="modal-backdrop" id="modal-experience">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-experience-title">Add Experience Entry</h3>
+        <button class="modal-close-btn" data-close="modal-experience">&times;</button>
+      </div>
+      <form id="form-experience">
+        <input type="hidden" id="exp-edit-id">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Role Title *</label>
+            <input type="text" id="exp-role" class="form-control" placeholder="e.g. AI Automation & Prompt Engineer" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Organization / Entity *</label>
+            <input type="text" id="exp-org" class="form-control" placeholder="e.g. Freelance / KTH" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Timeline Period *</label>
+            <input type="text" id="exp-period" class="form-control" placeholder="e.g. 2025 — Present" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Badge Label (Optional)</label>
+            <input type="text" id="exp-badge" class="form-control" placeholder="e.g. FREELANCE • ACTIVE">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; cursor:pointer;">
+            <input type="checkbox" id="exp-highlight">
+            <span>Highlight Card (accent golden border & prominent focus)</span>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Summary Overview *</label>
+          <textarea id="exp-summary" class="form-control" rows="2" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Key Responsibilities / Bullet Points (One per line)</label>
+          <textarea id="exp-points" class="form-control" rows="3" placeholder="Building intelligent autonomous workflows...&#10;Automating business processes..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tech Stack Tags (Comma separated)</label>
+          <input type="text" id="exp-tags" class="form-control" placeholder="n8n, AI Agents, Prompt Engineering, API Integrations">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-glass" data-close="modal-experience">Cancel</button>
+          <button type="submit" class="btn btn-gold">Save Experience</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Skills Category Modal -->
+  <div class="modal-backdrop" id="modal-skill">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-skill-title">Add Skill Category</h3>
+        <button class="modal-close-btn" data-close="modal-skill">&times;</button>
+      </div>
+      <form id="form-skill">
+        <input type="hidden" id="skill-edit-id">
+
+        <div class="form-row">
+          <div class="form-group" style="max-width:100px;">
+            <label class="form-label">Icon</label>
+            <input type="text" id="skill-icon" class="form-control" placeholder="⚡" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Category Title *</label>
+            <input type="text" id="skill-category" class="form-control" placeholder="e.g. AI & Automation" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Category Summary *</label>
+          <textarea id="skill-description" class="form-control" rows="2" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Skill Pills (Comma separated) *</label>
+          <textarea id="skill-items" class="form-control" rows="3" placeholder="n8n, LangGraph, CrewAI, Autonomous Agents" required></textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-glass" data-close="modal-skill">Cancel</button>
+          <button type="submit" class="btn btn-gold">Save Category</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="kth-toast">
+    <span id="toast-icon">✅</span>
+    <span id="toast-msg">Changes saved successfully</span>
+  </div>
+
+  <!-- Admin JS Engine -->
+  <script src="js/admin.js"></script>
+</body>
+</html>
